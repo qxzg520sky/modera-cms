@@ -1,0 +1,30 @@
+/* 企业商城后台补充样式，基础 .card .table .btn 来自 /static/admin/admin.css */
+.sp-admin-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:16px}
+.sp-stat{background:#fff;border:1px solid #e6ecf3;border-radius:12px;padding:14px 16px}
+.sp-stat .l{font-size:12px;color:#64748b}
+.sp-stat .n{font-size:24px;font-weight:700;margin-top:6px;color:#0f172a}
+.sp-stat .n.blue{color:#1558b0}.sp-stat .n.green{color:#0f8a5f}.sp-stat .n.warn{color:#b45309}
+.sp-badge{display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;background:#eef2f7;color:#475569}
+.sp-badge.ok{background:#e7f7ef;color:#0f8a5f}.sp-badge.warn{background:#fff7e6;color:#b45309}.sp-badge.danger{background:#fdecec;color:#b02a2a}
+.sp-muted{color:#94a3b8;font-size:12px}
+.sp-form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.sp-field{display:flex;flex-direction:column;gap:6px}
+.sp-field label{font-size:12.5px;color:#475569}
+.sp-field input,.sp-field select,.sp-field textarea{border:1px solid #d8e1ee;border-radius:8px;padding:8px 10px;font-size:13px;background:#fff}
+.sp-field textarea{min-height:90px}
+.sp-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.sp-alert{padding:10px 14px;border-radius:10px;margin-bottom:14px;font-size:13px}
+.sp-alert.ok{background:#e7f7ef;color:#0f6b49;border:1px solid #b6e5cf}
+.sp-alert.err{background:#fdecec;color:#8f1d1d;border:1px solid #f3c2c2}
+.sp-table-wrap{overflow:auto}
+.sp-tag-list{display:flex;gap:6px;flex-wrap:wrap}
+.sp-pager{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.sp-pager a{padding:5px 10px;border:1px solid #d8e1ee;border-radius:8px;font-size:12px;color:#475569;text-decoration:none;background:#fff}
+.sp-pager a.on{background:#1558b0;color:#fff;border-color:#1558b0}
+.sp-sku-row{display:grid;grid-template-columns:1.2fr 2fr .8fr .8fr .8fr auto;gap:8px;align-items:end;margin-bottom:8px}
+.sp-sku-row input{border:1px solid #d8e1ee;border-radius:8px;padding:7px 9px;font-size:12.5px}
+.sp-danger{color:#b02a2a}
+.sp-code{font-family:Consolas,monospace;font-size:12px;background:#f4f7fb;padding:2px 6px;border-radius:6px}
+.sp-timeline{display:grid;gap:8px;margin-top:10px}
+.sp-timeline .item{display:flex;gap:10px;font-size:12.5px;color:#475569}
+.sp-timeline .item b{color:#0f172a}

@@ -20,3 +20,5 @@ Thumbs.db
 *.zip
 *.7z
 *.log
+# 发行用模块包：允许追踪 modules/store 下的 zip
+!modules/store/*.zip

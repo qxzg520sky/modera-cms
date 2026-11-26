@@ -1,0 +1,19 @@
+{
+  "name": "shop",
+  "title": "企业商城",
+  "version": "1.0.0",
+  "author": "某某实业",
+  "description": "独立商城插件：商品/分类/SKU/购物车/订单/售后/优惠券/订单日志。会员资料、等级折扣、余额、积分、地址、累计消费全部通过会员插件服务类或签名 API 调用，商城不读写任何 member_* 表。支持余额支付、积分抵扣、后台改价发货、订单 Excel 导出、业务员仅看自己客户订单。",
+  "admin_url": "/admin/plugin/shop",
+  "uninstall": true,
+  "admin_menu": [
+    { "title": "商城总览", "url": "/admin/plugin/shop", "ico": "🛒" },
+    { "title": "商品管理", "url": "/admin/plugin/shop/products", "ico": "📦" },
+    { "title": "商品分类", "url": "/admin/plugin/shop/categories", "ico": "🗂️" },
+    { "title": "库存管理", "url": "/admin/plugin/shop/skus", "ico": "🏷️" },
+    { "title": "订单管理", "url": "/admin/plugin/shop/orders", "ico": "🧾" },
+    { "title": "售后审核", "url": "/admin/plugin/shop/aftersales", "ico": "↩️" },
+    { "title": "优惠券", "url": "/admin/plugin/shop/coupons", "ico": "🎫" },
+    { "title": "商城设置", "url": "/admin/plugin/shop/settings", "ico": "⚙️" }
+  ]
+}
