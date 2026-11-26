@@ -1,0 +1,22 @@
+*.log
+.env
+composer.phar
+composer.lock
+.DS_Store
+Thumbs.db
+/.idea
+/.vscode
+/vendor
+/.settings
+/.buildpath
+/.project
+# ===== 站点运行时与内容（不纳入版本库） =====
+/runtime/
+/uploads/
+/public/uploads/
+/backup/
+*.sql
+*.sql.gz
+*.zip
+*.7z
+*.log

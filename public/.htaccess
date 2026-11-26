@@ -1,0 +1,12 @@
+
+
+# BEGIN cache-plugin
+<IfModule mod_headers.c>
+  # 图片/字体/脚本/媒体：长缓存，到期前不再回源（只作用于 /uploads 与 /static）
+  <If "%{REQUEST_URI} =~ m#^/(uploads|static)/#">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+    Header set Expires "Wed, 31 Dec 2037 23:55:55 GMT"
+    Header unset Pragma
+  </If>
+</IfModule>
+# END cache-plugin

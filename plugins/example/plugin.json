@@ -1,0 +1,13 @@
+{
+    "title": "示例插件",
+    "version": "1.0.0",
+    "author": "系统内置",
+    "description": "演示插件完整能力：后台菜单、配置项、独立控制器与前台路由。复制本目录改名，即可开发多语言、商城、支付等扩展。",
+    "admin_menu": [
+        { "title": "示例插件", "url": "/admin/plugin/example" }
+    ],
+    "config": [
+        { "name": "welcome_text", "label": "前台展示文字", "type": "text", "default": "这是示例插件输出的内容" },
+        { "name": "intro", "label": "插件说明（可多行）", "type": "textarea", "default": "" }
+    ]
+}

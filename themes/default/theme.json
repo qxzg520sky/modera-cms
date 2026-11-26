@@ -1,0 +1,8 @@
+{
+    "name": "default",
+    "title": "默认企业主题",
+    "version": "1.0.0",
+    "author": "系统内置",
+    "description": "简洁企业官网模板：首页轮播区+栏目卡片+最新资讯，支持后台更换。复制本目录改名即为新主题。",
+    "screenshot": "screenshot.png"
+}
