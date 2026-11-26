@@ -47,8 +47,13 @@ Apache 直接把网站根目录设为 `public/`，项目自带 `.htaccess`。Ngi
 root /path/to/modera-cms/public;
 index index.php;
 
+# 主题资源由 PHP 动态输出，必须先于默认的 .css 正则规则
+location ^~ /theme/ {
+    try_files $uri /index.php?s=$uri&$args;
+}
+
 location / {
-    try_files $uri $uri/ /index.php?$query_string;
+    try_files $uri $uri/ /index.php?s=$uri&$args;
 }
 
 location ~ \.php$ {
@@ -58,6 +63,8 @@ location ~ \.php$ {
     include fastcgi_params;
 }
 ```
+
+> 宝塔 Nginx 若出现“前台没样式、`/theme/style.css` 404”，这是 Nginx 默认 `.css` 静态规则截走了动态主题资源，不是程序问题。处理步骤见 [docs/nginx-theme-404.md](docs/nginx-theme-404.md)。
 
 ### 3. 建库并配置 `.env`
 
