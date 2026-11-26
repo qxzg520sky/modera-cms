@@ -82,12 +82,56 @@ class PluginManager
         return self::hook($name, 'install.php');
     }
 
-    /** 执行 plugins/{name}/uninstall.php 并停用插件（字段、数据由插件自己清理） */
+    /**
+     * 执行 uninstall.php、删除插件目录并清理 tp_plugin 记录。
+     * 卸载后要重新使用，可在应用市场重新下载安装。
+     *
+     * @return array{0:bool,1:array<int,string>}
+     */
     public static function uninstall(string $name): array
     {
+        if (!preg_match('/^[A-Za-z0-9_\-]{2,40}$/', $name)) {
+            return [false, ['插件名不合法']];
+        }
+        if (in_array($name, ['example'], true)) {
+            return [false, ['内置示例插件不能卸载']];
+        }
+        $dir = root_path() . 'plugins' . DIRECTORY_SEPARATOR . $name;
+        if (!is_dir($dir)) {
+            return [false, ['插件目录不存在：plugins/' . $name]];
+        }
+
         $logs = self::hook($name, 'uninstall.php');
         Db::name('plugin')->where('name', $name)->update(['enabled' => 0]);
-        return $logs;
+
+        if (!self::removeDir($dir)) {
+            return [false, array_merge($logs, ['插件目录删除失败，请检查文件权限或先停用插件'])];
+        }
+        Db::name('plugin')->where('name', $name)->delete();
+        $logs[] = '插件文件已删除：plugins/' . $name;
+
+        return [true, $logs];
+    }
+
+    private static function removeDir(string $dir): bool
+    {
+        if (!is_dir($dir)) {
+            return true;
+        }
+        foreach (scandir($dir) ?: [] as $item) {
+            if ($item === '.' || $item === '..') {
+                continue;
+            }
+            $path = $dir . DIRECTORY_SEPARATOR . $item;
+            if (is_link($path) || is_file($path)) {
+                if (!@unlink($path)) {
+                    return false;
+                }
+            } elseif (!self::removeDir($path)) {
+                return false;
+            }
+        }
+        return @rmdir($dir);
     }
 
     /** 运行插件钩子文件 */

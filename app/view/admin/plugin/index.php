@@ -30,9 +30,11 @@
             <?php if (!empty($p['meta']['admin_url'])): ?>
               <a class="btn btn-sm" href="<?= e($p['meta']['admin_url']) ?>">管理</a>
             <?php endif; ?>
-            <?php if ((int) $p['enabled'] === 1 || !empty($p['meta']['uninstall'])): ?>
+            <?php if ($p['name'] === 'example'): ?>
+              <span class="muted" style="font-size:12px;line-height:28px">内置示例插件，不可卸载</span>
+            <?php elseif ((int) $p['enabled'] === 1 || !empty($p['meta']['uninstall'])): ?>
               <form method="post" action="/admin/plugin/uninstall" style="display:inline"
-                onsubmit="return confirm('卸载会执行插件的 uninstall.php，删除它新增的表/字段和配置，且不可恢复。确定卸载「<?= e($p['title']) ?>」？');">
+                onsubmit="return confirm('卸载会执行插件的 uninstall.php，删除它新增的表/字段和配置，并删除 plugins/<?= e($p['name']) ?> 整个目录。卸载后可在应用市场重新下载。不可恢复，确定卸载「<?= e($p['title']) ?>」？');">
                 <input type="hidden" name="name" value="<?= e($p['name']) ?>">
                 <button class="btn btn-sm btn-danger" type="submit">卸载</button>
               </form>

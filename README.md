@@ -132,6 +132,8 @@ http://你的域名/admin
 **本地仓库包**：把 zip 放进 `modules/store/`，模块中心会列出；主仓库只带 `plugin-example.zip`。
 
 > 插件 `install.php` 会建表/加字段；生产环境操作前先备份数据库。
+>
+> 后台“卸载”会删除 `themes/{name}` 或 `plugins/{name}` 整个目录，并清理模块记录；需要恢复时回到应用市场重新下载即可。
 
 ## 目录结构
 

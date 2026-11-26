@@ -58,7 +58,7 @@
                 <?php elseif ($m['enabled']): ?>
                   <span class="muted" style="font-size:12px;line-height:28px">启用中不可卸载</span>
                 <?php else: ?>
-                  <form method="post" action="/admin/module/uninstall" style="display:inline" onsubmit="return confirm('确定卸载模板「<?= e($m['title']) ?>」？将删除 themes/<?= e($m['name']) ?> 整个目录，且不可恢复。');">
+                  <form method="post" action="/admin/module/uninstall" style="display:inline" onsubmit="return confirm('确定卸载模板「<?= e($m['title']) ?>」？将删除 themes/<?= e($m['name']) ?> 整个目录，且不可恢复。卸载后可在应用市场重新下载。');">
                     <input type="hidden" name="name" value="<?= e($m['name']) ?>">
                     <button class="btn btn-sm" type="submit" style="color:#b42318;border-color:#f0c9c4">卸载</button>
                   </form>
@@ -72,6 +72,15 @@
                 <a class="btn btn-sm" href="/admin/plugin">插件列表</a>
                 <?php if (!empty($m['name'])): ?>
                   <a class="btn btn-sm" href="/admin/plugin/config/<?= e($m['name']) ?>">设置</a>
+                <?php endif; ?>
+                <?php if ($m['core']): ?>
+                  <span class="muted" style="font-size:12px;line-height:28px">内置，不可卸载</span>
+                <?php else: ?>
+                  <form method="post" action="/admin/plugin/uninstall" style="display:inline"
+                    onsubmit="return confirm('确定卸载插件「<?= e($m['title']) ?>」？将执行 uninstall.php，并删除 plugins/<?= e($m['name']) ?> 整个目录；卸载后可在应用市场重新下载。不可恢复。');">
+                    <input type="hidden" name="name" value="<?= e($m['name']) ?>">
+                    <button class="btn btn-sm" type="submit" style="color:#b42318;border-color:#f0c9c4">卸载</button>
+                  </form>
                 <?php endif; ?>
               <?php endif; ?>
             </div>

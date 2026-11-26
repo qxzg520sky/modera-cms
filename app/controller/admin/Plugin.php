@@ -35,8 +35,11 @@ class Plugin extends Base
             return $this->back('/admin/plugin', '插件不存在');
         }
 
-        $logs = PluginManager::uninstall($name);
-        $msg  = '插件已卸载，站点已还原：' . ($logs ? implode('；', array_slice($logs, 0, 3)) . (count($logs) > 3 ? ' 等 ' . count($logs) . ' 项' : '') : '无需要清理的数据');
+        [$ok, $logs] = PluginManager::uninstall($name);
+        if (!$ok) {
+            return $this->back('/admin/plugin', '卸载失败：' . implode('；', $logs));
+        }
+        $msg = '插件已卸载，插件目录已删除，可在应用市场重新下载安装：' . ($logs ? implode('；', array_slice($logs, 0, 3)) . (count($logs) > 3 ? ' 等 ' . count($logs) . ' 项' : '') : '无需要清理的数据');
 
         return $this->back('/admin/plugin', $msg);
     }

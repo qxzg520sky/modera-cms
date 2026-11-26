@@ -27,13 +27,23 @@
           </div>
           <div class="muted" style="font-size:12px;margin:6px 0">目录：themes/<?= e($t['name']) ?> · v<?= e($t['version']) ?> <?= $t['author'] ? '· ' . e($t['author']) : '' ?></div>
           <div style="min-height:42px;color:#4b5563;font-size:13px"><?= e($t['description']) ?></div>
-          <div style="margin-top:12px">
+          <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
             <?php if ($t['name'] === $current): ?>
               <button class="btn btn-sm" disabled>已启用</button>
             <?php else: ?>
               <form method="post" action="/admin/theme/enable" style="display:inline">
                 <input type="hidden" name="name" value="<?= e($t['name']) ?>">
                 <button class="btn btn-sm btn-primary" type="submit">启用此模板</button>
+              </form>
+            <?php endif; ?>
+            <?php if ($t['name'] === 'default'): ?>
+              <span class="muted" style="font-size:12px">内置模板，不可卸载</span>
+            <?php elseif ($t['name'] === $current): ?>
+              <span class="muted" style="font-size:12px">启用中不可卸载</span>
+            <?php else: ?>
+              <form method="post" action="/admin/theme/uninstall" style="display:inline" onsubmit="return confirm('确定卸载模板「<?= e($t['title']) ?>」？将删除 themes/<?= e($t['name']) ?> 整个目录，且不可恢复。卸载后可在应用市场重新下载。');">
+                <input type="hidden" name="name" value="<?= e($t['name']) ?>">
+                <button class="btn btn-sm" type="submit" style="color:#b42318;border-color:#f0c9c4">卸载</button>
               </form>
             <?php endif; ?>
           </div>
