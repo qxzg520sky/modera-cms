@@ -4,6 +4,8 @@
 
 前台：`/`　后台：`/admin`　默认演示主题：**为科工业（weike）**
 
+> 全部主题与插件的一句话功能说明见 [MODULES.md](MODULES.md)。
+
 ![Modera CMS 演示首页](themes/weike/screenshot.png)
 
 ## 为什么用它
@@ -12,7 +14,7 @@
 - **插件即模块包**：插件以 zip 包放在 `modules/store/`，后台“模块中心”识别后一键安装、启用、停用、卸载。
 - **自带企业级功能**：文章、无限级栏目、单页、SEO、轮播、多语言、在线客服、访问统计、数据库备份、会员、商城。
 - **前台后台同一套数据**：栏目、文章、单页、导航、设置和插件数据全部来自后台，不写死页面。
-- **响应式主题**：PC、平板、手机共用一套模板，内置 6 套企业主题。
+- **响应式主题**：PC、平板、手机共用一套模板，内置 7 套企业主题。
 - **可离线部署**：`vendor/` 已随仓库提供，不装 Composer 也能跑；安装向导自动建表。
 
 ## 环境要求
@@ -133,7 +135,7 @@ http://你的域名/admin
 
 ## 主题下载
 
-仓库同时附带 6 套响应式企业主题，也是可直接安装的模块包：
+仓库同时附带 7 套响应式企业主题，也是可直接安装的模块包：
 
 | 主题 | 版本 | 风格 | 下载 |
 | --- | --- | --- | --- |
@@ -143,6 +145,7 @@ http://你的域名/admin
 | 视维蓝 `shiwei` | 1.0.0 | 白底蓝字、框线标题、解决方案与产品横滑 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/theme-shiwei.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/theme-shiwei.zip) |
 | 投资集团 `touzi` | 1.0.0 | 金融投资集团、蓝色首屏、业务切换与集团风采 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/theme-touzi.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/theme-touzi.zip) |
 | 为科工业 `weike` | 1.0.0 | 蓝白工业、建筑横幅、产品/方案/案例/新闻，兼容商城导航 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/theme-weike.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/theme-weike.zip) |
+| 象邦自然 `xiangbang` | 1.0.0 | 深绿与米白的自然系企业官网，含全屏主视觉、产品/方案/服务/新闻、移动菜单与商城入口 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/theme-xiangbang.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/theme-xiangbang.zip) |
 
 安装主题和安装插件一样：包放进 `modules/store/`，后台“模块中心”点安装，再到“模板主题”启用。
 
@@ -159,7 +162,7 @@ public/                Web 入口，站点根目录指向这里
   static/              后台与公共静态资源
   uploads/             后台上传文件（运行数据，默认不纳入版本库）
 route/                 前台与后台路由
-themes/                主题源码（default、gangtie、gangtie2、shiwei、touzi、weike）
+themes/                主题源码（default、gangtie、gangtie2、shiwei、touzi、weike、xiangbang）
 plugins/               插件源码（cache、dbbackup、example、kefu、member、multilang、shop、slider、stats）
 modules/store/         可安装的插件/主题 zip 包
 runtime/               运行缓存、日志、备份（默认不纳入版本库）

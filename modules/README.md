@@ -14,7 +14,8 @@ modules/
     ├── theme-gangtie2.zip     # 工业橙企业主题
     ├── theme-shiwei.zip       # 视维蓝企业模板
     ├── theme-touzi.zip        # 投资集团模板
-    ├── theme-weike.zip        # 为科工业模板（当前启用）
+    ├── theme-weike.zip        # 为科工业模板
+    ├── theme-xiangbang.zip    # 象邦自然系模板（含商城入口与商城皮肤）
     ├── plugin-example.zip     # 示例插件
     ├── plugin-cache.zip       # 缓存优化
     ├── plugin-dbbackup.zip    # 数据库备份
@@ -26,7 +27,7 @@ modules/
     └── plugin-stats.zip       # 访问统计
 ```
 
-当前共 6 个主题包、9 个插件包，均为 2026-11-26 的完整代码快照。
+当前共 7 个主题包、9 个插件包，均为 2026-11-26 的完整代码快照。
 
 ## 模块包结构
 
