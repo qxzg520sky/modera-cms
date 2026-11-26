@@ -83,7 +83,7 @@ if ($pluginMenus) {
       <?php endforeach; ?>
     <?php endforeach; ?>
   </nav>
-  <div class="sidebar-foot">ThinkPHP <?= e(\think\facade\App::version()) ?></div>
+  <div class="sidebar-foot"><a href="https://modera.webfixer.cn/" target="_blank" rel="noopener">modera-cms</a></div>
 </aside>
 
 <div class="main">

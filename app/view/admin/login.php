@@ -25,7 +25,7 @@
       </div>
       <button type="submit" class="btn btn-primary">登 录</button>
     </form>
-    <div class="login-foot">ThinkPHP <?= e(\think\facade\App::version()) ?> · 后台路径 /admin</div>
+    <div class="login-foot"><a href="https://modera.webfixer.cn/" target="_blank" rel="noopener">modera-cms</a> · 后台路径 /admin</div>
   </div>
 </div>
 </body>

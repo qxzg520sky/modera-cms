@@ -2,6 +2,29 @@
 
 <div class="card">
   <div class="card-head">
+    <span>按需安装说明</span>
+    <span class="muted" style="font-weight:400;font-size:12px">主程序默认只带 default 模板与 example 插件</span>
+  </div>
+  <div class="card-body" style="font-size:13px;color:#374151;line-height:1.9">
+    <div>为了避免下载主程序时被迫带走全部插件和模板，其余模块已经不放在 <code>modules/store</code> 里，而是在独立的 <code>market</code> 下载分支中按需获取。</div>
+    <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <?php if (!empty($marketEnabled)): ?>
+        <a class="btn btn-sm btn-primary" href="/admin/plugin/market">打开应用市场</a>
+        <span class="muted" style="font-size:12px">浏览远程插件和模板，按需下载安装。</span>
+      <?php elseif (!empty($marketInstalled)): ?>
+        <a class="btn btn-sm btn-primary" href="/admin/plugin">去启用应用市场插件</a>
+        <span class="muted" style="font-size:12px">应用市场已安装但未启用。</span>
+      <?php else: ?>
+        <a class="btn btn-sm btn-primary" href="https://gitee.com/51iqx/modera-cms/raw/market/plugins/plugin-market.zip">下载应用市场插件</a>
+        <a class="btn btn-sm" href="https://github.com/qxzg520sky/modera-cms/blob/market/README.md" target="_blank" rel="noopener">查看模块下载说明</a>
+        <span class="muted" style="font-size:12px">应用市场是独立插件，默认不安装；上传 zip 安装后即可在后台打开。</span>
+      <?php endif; ?>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head">
     <span>已安装模块（磁盘 themes/ 与 plugins/）</span>
     <span class="muted" style="font-weight:400;font-size:12px">默认模板与演示插件为内置模块，不可卸载</span>
   </div>
@@ -30,6 +53,16 @@
                   </form>
                 <?php endif; ?>
                 <a class="btn btn-sm" href="/admin/theme">模板列表</a>
+                <?php if ($m['core']): ?>
+                  <span class="muted" style="font-size:12px;line-height:28px">内置，不可卸载</span>
+                <?php elseif ($m['enabled']): ?>
+                  <span class="muted" style="font-size:12px;line-height:28px">启用中不可卸载</span>
+                <?php else: ?>
+                  <form method="post" action="/admin/module/uninstall" style="display:inline" onsubmit="return confirm('确定卸载模板「<?= e($m['title']) ?>」？将删除 themes/<?= e($m['name']) ?> 整个目录，且不可恢复。');">
+                    <input type="hidden" name="name" value="<?= e($m['name']) ?>">
+                    <button class="btn btn-sm" type="submit" style="color:#b42318;border-color:#f0c9c4">卸载</button>
+                  </form>
+                <?php endif; ?>
               <?php else: ?>
                 <form method="post" action="/admin/plugin/toggle" style="display:inline">
                   <input type="hidden" name="name" value="<?= e($m['name']) ?>">
@@ -119,7 +152,7 @@
       <div>· 主题包：<code>包名/theme.json</code> + 模板文件 + <code>screenshot.png</code>，解压到 <code>themes/包名/</code></div>
       <div>· 插件包：<code>包名/plugin.json</code> + 控制器/模板/<code>install.php</code>，解压到 <code>plugins/包名/</code></div>
       <div>· 插件安装时会自动执行 <code>install.php</code>（建表、建字段），启用后前台与后台菜单才生效。</div>
-      <div>· 首次安装只带 <code>default</code> 模板与 <code>example</code> 演示插件，其余模块一律从本页安装。</div>
+      <div>· 首次安装只带 <code>default</code> 模板与 <code>example</code> 演示插件。其余插件/模板请从应用市场下载，或上传单独下载的 zip。</div>
     </div>
   </div>
 </div>

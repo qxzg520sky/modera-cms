@@ -53,6 +53,8 @@ class Module extends Base
             'records'   => $records,
             'packages'  => ModuleMarket::packages(),
             'storeDir'  => 'modules/store',
+            'marketInstalled' => is_dir(root_path() . 'plugins/market'),
+            'marketEnabled'   => in_array('market', PluginManager::enabled(), true),
         ]);
     }
 
@@ -90,5 +92,12 @@ class Module extends Base
         $file = (string) $this->request->post('file', '');
         [$ok, $msg] = ModuleMarket::removePackage($file);
         return $this->back('/admin/module', ($ok ? '' : '删除失败：') . $msg);
+    }
+
+    public function uninstall()
+    {
+        $name = trim((string) $this->request->post('name', ''));
+        [$ok, $msg] = ThemeManager::uninstall($name);
+        return $this->back('/admin/module', $ok ? $msg : '卸载失败：' . $msg);
     }
 }
