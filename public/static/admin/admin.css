@@ -4,10 +4,10 @@
   --a-ink: #1f2937;
   --a-muted: #6b7280;
   --a-line: #e5e7eb;
-  --a-brand: #1f5d3a;
-  --a-brand-2: #2f7a4e;
-  --a-side: #16241b;
-  --a-side-2: #1d3024;
+  --a-brand: #2563eb;
+  --a-brand-2: #1d4ed8;
+  --a-side: #0f172a;
+  --a-side-2: #1e293b;
   --a-danger: #b42318;
 }
 
@@ -32,21 +32,21 @@ a:hover { opacity: .82; }
   justify-content: center;
   padding: 32px 20px;
   background:
-    radial-gradient(900px 500px at 15% 10%, rgba(105, 137, 82, .28), transparent 60%),
-    linear-gradient(145deg, #0f1d15 0%, #1c3325 55%, #29432f 100%);
+    radial-gradient(900px 500px at 15% 10%, rgba(37, 99, 235, .24), transparent 60%),
+    linear-gradient(145deg, #0b1220 0%, #111c2e 55%, #1d2b42 100%);
 }
 .login-box {
   width: 100%;
   max-width: 400px;
   padding: 38px 36px 30px;
   border-radius: 14px;
-  background: #f7f4ec;
+  background: #ffffff;
   box-shadow: 0 30px 80px rgba(0, 0, 0, .38);
 }
 .login-box h1 { margin: 0 0 4px; font-size: 24px; letter-spacing: .04em; }
-.login-box .sub { margin: 0 0 24px; color: #6c7566; font-size: 12px; letter-spacing: .08em; }
+.login-box .sub { margin: 0 0 24px; color: #6b7280; font-size: 12px; letter-spacing: .08em; }
 .login-box .btn { width: 100%; height: 44px; margin-top: 6px; }
-.login-foot { margin-top: 22px; padding-top: 14px; border-top: 1px solid #dfe3d8; color: #8a9286; font-size: 11px; }
+.login-foot { margin-top: 22px; padding-top: 14px; border-top: 1px solid #e5e7eb; color: #94a3b8; font-size: 11px; }
 
 /* ---------- 框架 ---------- */
 .sidebar {
@@ -55,16 +55,16 @@ a:hover { opacity: .82; }
   width: 232px;
   padding: 0 0 24px;
   overflow-y: auto;
-  background: linear-gradient(180deg, var(--a-side) 0%, #101b14 100%);
-  color: #e9eee6;
+  background: linear-gradient(180deg, var(--a-side) 0%, #0b1220 100%);
+  color: #e5e7eb;
   z-index: 20;
 }
 .brand { padding: 24px 22px 20px; border-bottom: 1px solid rgba(255, 255, 255, .08); }
 .brand h1 { margin: 0 0 3px; font-size: 17px; font-weight: 600; letter-spacing: .02em; overflow-wrap: anywhere; }
-.brand span { font-size: 10px; letter-spacing: .14em; color: #8fa393; text-transform: uppercase; }
+.brand span { font-size: 10px; letter-spacing: .14em; color: #94a3b8; text-transform: uppercase; }
 
 .nav { padding: 8px 10px; }
-.nav-group { padding: 14px 12px 6px; color: #7c927f; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
+.nav-group { padding: 14px 12px 6px; color: #7c8aa0; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
 .nav-item {
   display: flex;
   align-items: center;
@@ -72,14 +72,14 @@ a:hover { opacity: .82; }
   padding: 9px 12px;
   margin: 2px 0;
   border-radius: 7px;
-  color: #cfdccc;
+  color: #dbe3ef;
   font-size: 13px;
   transition: background .15s;
 }
 .nav-item .ico { width: 18px; font-size: 13px; opacity: .75; text-align: center; }
 .nav-item:hover { background: rgba(255, 255, 255, .07); opacity: 1; }
-.nav-item.active { background: rgba(139, 176, 113, .17); color: #d8e9a8; }
-.sidebar-foot { margin: 22px 12px 0; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.07); color: #6e8672; font-size: 10px; text-align: center; }
+.nav-item.active { background: rgba(59, 130, 246, .18); color: #dbeafe; }
+.sidebar-foot { margin: 22px 12px 0; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.07); color: #7c8aa0; font-size: 10px; text-align: center; }
 
 .main { margin-left: 232px; min-height: 100vh; padding-bottom: 36px; }
 .topbar {
@@ -184,7 +184,7 @@ select, textarea {
   outline: none;
   transition: border-color .15s, box-shadow .15s;
 }
-input:focus, select:focus, textarea:focus { border-color: #6b9a78; box-shadow: 0 0 0 3px rgba(47, 122, 78, .12); }
+input:focus, select:focus, textarea:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(37, 99, 235, .12); }
 textarea { min-height: 120px; resize: vertical; }
 input[type="checkbox"], input[type="radio"] { width: auto; min-height: 0; margin-right: 6px; vertical-align: -1px; }
 .form-row { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -233,3 +233,5 @@ input[type="checkbox"], input[type="radio"] { width: auto; min-height: 0; margin
   .stat-grid { grid-template-columns: 1fr; }
   .table { display: block; overflow-x: auto; white-space: nowrap; }
 }
+
+
