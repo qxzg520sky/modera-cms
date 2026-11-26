@@ -1,5 +1,8 @@
 <?php
 $pageTitle = $pageTitle ?? ($shopCfg['shop_name'] ?? '企业商城');
+if ($pageTitle === ($shopCfg['shop_name'] ?? '企业商城')) {
+    $pageTitle = '商城';
+}
 $me = $me ?? [];
 $cartCount = 0;
 if (!empty($me['id'])) {
@@ -16,13 +19,19 @@ $cur = '/' . ltrim((string) request()->pathinfo(), '/');
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title><?= e($pageTitle) ?> - <?= e($shopCfg['shop_name'] ?? '企业商城') ?></title>
 <link rel="stylesheet" href="/shop/asset/shop.css?v=1.0.0">
+<?php
+$shopSkin = root_path() . 'themes/' . \app\service\ThemeManager::current() . '/shop.css';
+if (is_file($shopSkin)): ?>
+<link rel="stylesheet" href="/theme/shop.css?v=1.0.0">
+<?php endif; ?>
 </head>
-<body>
+<body class="xb-shop">
 <header class="sp-nav">
   <div class="in">
     <a class="sp-logo" href="/shop"><?= e($shopCfg['shop_name'] ?? '企业商城') ?><span> · STORE</span></a>
     <div class="links">
-      <a href="/shop">商品</a>
+      <a href="/">官网首页</a>
+      <a href="/shop">全部商品</a>
       <?php if ($me): ?>
         <a href="/shop/cart">购物车<?php if ($cartCount > 0): ?><span class="sp-badge-count"><?= $cartCount ?></span><?php endif; ?></a>
         <a href="/shop/orders">我的订单</a>
