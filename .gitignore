@@ -12,8 +12,11 @@ Thumbs.db
 /.project
 # ===== 站点运行时与内容（不纳入版本库） =====
 /runtime/
-/uploads/
-/public/uploads/
+# 保留上传目录本身，但忽略上传内容
+/uploads/*
+!/uploads/.gitkeep
+/public/uploads/*
+!/public/uploads/.gitkeep
 /backup/
 *.sql
 *.sql.gz
