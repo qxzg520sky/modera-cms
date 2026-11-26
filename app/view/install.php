@@ -199,7 +199,7 @@ h1 span{background:linear-gradient(90deg,#60a5fa,#a78bfa);-webkit-background-cli
       </form>
     </div>
   </div>
-  <div class="foot">ThinkPHP <?= e(\think\facade\App::version()) ?> · 安装完成后可用管理员账号进入 /admin</div>
+  <div class="foot"><a href="https://modera.webfixer.cn/" target="_blank" rel="noopener">modera-cms</a> · 安装完成后可用管理员账号进入 /admin</div>
 </div>
 </body>
 </html>
