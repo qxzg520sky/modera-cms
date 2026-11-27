@@ -73,7 +73,6 @@ $schema = array_filter($schema, static fn ($v) => $v !== null && $v !== '');
   <?php if ($showCover): ?>
   <div class="article-cover wrap">
     <?= ink_cover($row, 'hero', true) ?>
-    <p class="cover-caption"><span><?= e($catName) ?></span><span>NO.<?= str_pad((string) (int) $row['id'], 2, '0', STR_PAD_LEFT) ?></span></p>
   </div>
   <?php endif; ?>
 
