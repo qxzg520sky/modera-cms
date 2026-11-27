@@ -98,6 +98,8 @@ body.nav-open .menu-btn span:nth-child(3){top:20px;transform:rotate(-45deg)}
 .mobile-nav a span{font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.2em}
 .mobile-nav .m-tel{margin-top:28px;display:block;border:0;padding:0;color:var(--accent);font-size:26px;letter-spacing:.02em}
 body.nav-open .mobile-nav{display:block}
+body.nav-open .kf-launcher,body.nav-open .kf-toast{opacity:0;visibility:hidden;pointer-events:none}
+#mbfFabMount{display:none!important}
 
 /* ---------- 通用 ---------- */
 .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
@@ -428,7 +430,7 @@ body.nav-open .mobile-nav{display:block}
   .brand-mark{width:34px;height:34px;font-size:18px}
   .brand-text b{font-size:15px;letter-spacing:.17em}
   .brand-text span{font-size:8px}
-  .mobile-nav{inset:70px 0 0}
+  .mobile-nav{top:70px;right:0;bottom:auto;left:0;height:calc(100vh - 70px)}
   .hero-in{padding:46px 0 60px}
   .hero-copy h1{font-size:38px;line-height:1.1}
   .hero-copy p{font-size:14px;line-height:1.9}

@@ -50,7 +50,7 @@ $contactUrl = $contactPage ? lang_path('/p/' . $contactPage['slug']) : lang_path
 <title><?= e($seoTitle) ?></title>
 <meta name="keywords" content="<?= e($seoKeywords ?? setting('site_keywords', '')) ?>">
 <meta name="description" content="<?= e($seoDesc ?? setting('site_description', '')) ?>">
-<link rel="stylesheet" href="/theme/style.css?v=1.1.0">
+<link rel="stylesheet" href="/theme/style.css?v=1.1.2">
 <?php if (!empty(multilang_config()['langs'])): ?>
 <?php foreach (multilang_config()['langs'] as $lc): ?>
 <link rel="alternate" hreflang="<?= e($lc) ?>" href="<?= e(lang_url($lc)) ?>">
