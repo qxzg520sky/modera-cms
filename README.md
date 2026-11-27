@@ -53,6 +53,7 @@
 | 投资集团 `touzi` | `themes/theme-touzi.zip` | [Gitee](https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-touzi.zip) · [GitHub](https://raw.githubusercontent.com/qxzg520sky/modera-cms/market/themes/theme-touzi.zip) |
 | 为科工业 `weike` | `themes/theme-weike.zip` | [Gitee](https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-weike.zip) · [GitHub](https://raw.githubusercontent.com/qxzg520sky/modera-cms/market/themes/theme-weike.zip) |
 | 象邦自然 `xiangbang` | `themes/theme-xiangbang.zip` | [Gitee](https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-xiangbang.zip) · [GitHub](https://raw.githubusercontent.com/qxzg520sky/modera-cms/market/themes/theme-xiangbang.zip) |
+| 唯星工业 `weixing` | `themes/theme-weixing.zip` | [Gitee](https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-weixing.zip) · [GitHub](https://raw.githubusercontent.com/qxzg520sky/modera-cms/market/themes/theme-weixing.zip) |
 
 ## 自建模块源
 
