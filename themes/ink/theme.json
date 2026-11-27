@@ -1,0 +1,8 @@
+{
+  "name": "ink",
+  "title": "墨白博客模板",
+  "version": "1.0.0",
+  "author": "Modera CMS",
+  "description": "极简高级感技术博客模板：首页、分类文章列表、文章详情与单页；浅色/深色双主题；文章自定义封面优先，没有封面时用 Canvas 按标题与摘要自动生成低饱和度几何封面，每篇版式随标题微调。卡片阴影轻薄、圆角柔和，PC 与手机自适应。",
+  "screenshot": "themes/ink/screenshot.png"
+}
