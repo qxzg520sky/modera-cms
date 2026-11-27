@@ -40,8 +40,11 @@
 | 企业商城 `shop` | `plugins/plugin-shop.zip` | [Gitee](https://gitee.com/51iqx/modera-cms/raw/market/plugins/plugin-shop.zip) · [GitHub](https://raw.githubusercontent.com/qxzg520sky/modera-cms/market/plugins/plugin-shop.zip) |
 | 轮播广告 `slider` | `plugins/plugin-slider.zip` | [Gitee](https://gitee.com/51iqx/modera-cms/raw/market/plugins/plugin-slider.zip) · [GitHub](https://raw.githubusercontent.com/qxzg520sky/modera-cms/market/plugins/plugin-slider.zip) |
 | 访问统计 `stats` | `plugins/plugin-stats.zip` | [Gitee](https://gitee.com/51iqx/modera-cms/raw/market/plugins/plugin-stats.zip) · [GitHub](https://raw.githubusercontent.com/qxzg520sky/modera-cms/market/plugins/plugin-stats.zip) |
+| 编辑器切换 `editor` | `plugins/plugin-editor.zip` | [Gitee](https://gitee.com/51iqx/modera-cms/raw/market/plugins/plugin-editor.zip) · [GitHub](https://raw.githubusercontent.com/qxzg520sky/modera-cms/market/plugins/plugin-editor.zip) |
 
 > 商城 `shop` 依赖会员 `member`，请先安装并启用会员插件。
+
+> 编辑器切换 `editor` 依赖主程序 `rich_editor()` 的插件分发能力；最新 `main` 已内置。旧版本需先更新 `app/common.php`，否则启用插件后编辑页仍显示内置 WangEditor。
 
 模板：
 

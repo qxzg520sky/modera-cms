@@ -1,7 +1,7 @@
 {
   "name": "Modera Module Market",
   "version": 1,
-  "updated_at": "2026-11-27 08:30:35",
+  "updated_at": "2026-11-27 10:18:55",
   "base": "https://gitee.com/51iqx/modera-cms/raw/market/",
   "items": [
     {
@@ -102,6 +102,18 @@
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/plugins/plugin-stats.zip",
       "size": 17292,
       "sha256": "1c4e0a76ada34eaa8476aeb6fa0d740997162033ddd0b2afc80f32ce23fe6ae0"
+    },
+    {
+      "type": "plugin",
+      "name": "editor",
+      "title": "编辑器切换",
+      "version": "1.0.0",
+      "author": "Modera CMS",
+      "description": "后台一键切换 WangEditor 富文本编辑器（默认）与 Vditor Markdown 编辑器，文章与单页编辑页同步生效；Vditor 内容用 Turndown / marked 在 HTML 与 Markdown 之间转换，入库仍是 HTML，前台模板无需改动。需要主程序 rich_editor 支持插件分发（最新 main 已内置）。",
+      "file": "plugins/plugin-editor.zip",
+      "url": "https://gitee.com/51iqx/modera-cms/raw/market/plugins/plugin-editor.zip",
+      "size": 1677974,
+      "sha256": "67d22c4b6e933b8a5feeb0b669a1b083732b45f7ec36862dca959b2032cd56f4"
     },
     {
       "type": "theme",
