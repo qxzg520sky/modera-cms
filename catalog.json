@@ -1,7 +1,7 @@
 {
   "name": "Modera Module Market",
   "version": 1,
-  "updated_at": "2026-11-27 10:59:28",
+  "updated_at": "2026-11-27 11:07:15",
   "base": "https://gitee.com/51iqx/modera-cms/raw/market/",
   "items": [
     {
@@ -208,8 +208,8 @@
       "description": "极简高级感技术博客模板：首页、分类文章列表、文章详情与单页；浅色/深色双主题；文章自定义封面优先，没有封面时用 Canvas 按标题与摘要自动生成低饱和度几何封面，每篇版式随标题微调。卡片阴影轻薄、圆角柔和，PC 与手机自适应。",
       "file": "themes/theme-ink.zip",
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-ink.zip",
-      "size": 214740,
-      "sha256": "674d29bf9927a95d68c2026596ec446bc0bbc0eef90c02b9ba672d48fb434c47"
+      "size": 214760,
+      "sha256": "f7d487a407388d71425e70dfa82de20c6b3300784fea361322d590ec9ec470f6"
     }
   ]
 }
