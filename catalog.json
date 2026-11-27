@@ -1,7 +1,7 @@
 {
   "name": "Modera Module Market",
   "version": 1,
-  "updated_at": "2026-11-27 10:18:55",
+  "updated_at": "2026-11-27 10:59:28",
   "base": "https://gitee.com/51iqx/modera-cms/raw/market/",
   "items": [
     {
@@ -198,6 +198,18 @@
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-weixing.zip",
       "size": 4211402,
       "sha256": "555b7c49f174c7a14b7a96ea6cb1c395d6b6fdf1eba646192a00984dff174f2d"
+    },
+    {
+      "type": "theme",
+      "name": "ink",
+      "title": "墨白博客模板",
+      "version": "1.0.0",
+      "author": "Modera CMS",
+      "description": "极简高级感技术博客模板：首页、分类文章列表、文章详情与单页；浅色/深色双主题；文章自定义封面优先，没有封面时用 Canvas 按标题与摘要自动生成低饱和度几何封面，每篇版式随标题微调。卡片阴影轻薄、圆角柔和，PC 与手机自适应。",
+      "file": "themes/theme-ink.zip",
+      "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-ink.zip",
+      "size": 214740,
+      "sha256": "674d29bf9927a95d68c2026596ec446bc0bbc0eef90c02b9ba672d48fb434c47"
     }
   ]
 }
