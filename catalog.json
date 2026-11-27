@@ -1,7 +1,7 @@
 {
   "name": "Modera Module Market",
   "version": 1,
-  "updated_at": "2026-11-27 11:07:15",
+  "updated_at": "2026-11-27 20:03:13",
   "base": "https://gitee.com/51iqx/modera-cms/raw/market/",
   "items": [
     {
@@ -44,13 +44,13 @@
       "type": "plugin",
       "name": "member",
       "title": "企业会员管理",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "author": "某某实业",
-      "description": "独立会员中台：会员资料、等级折扣、余额、积分、收货地址、业务员归属、Excel 导入导出、累计消费自动升级。商城/其它插件只通过签名 API 或服务调用会员资产，不直接操作会员表。前台入口全部由插件钩子输出，停用即隐藏；登录态由 /member/status 动态读取，兼容整页缓存。",
+      "description": "独立会员中台：会员资料、等级折扣、余额、积分、收货地址、业务员归属、Excel 导入导出、累计消费自动升级。商城/其它插件只通过签名 API 或服务调用会员资产，不直接操作会员表。前台入口全部由插件钩子输出，停用即隐藏；登录态由 /member/status 动态读取，兼容整页缓存。已适配墨白 ink 的 header 动作区与智敏 zhineng 的 header-side、手机菜单，不再悬浮遮挡头部 CTA。",
       "file": "plugins/plugin-member.zip",
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/plugins/plugin-member.zip",
-      "size": 78699,
-      "sha256": "1f0d5257fb724127f8a5b0334a18ba231cb39249c32971abf59a022d358eaf78"
+      "size": 79969,
+      "sha256": "e4673674d660ae6057369d4c6a9370a5f352d8350121ba15f30224aacad24e56"
     },
     {
       "type": "plugin",
@@ -68,13 +68,13 @@
       "type": "plugin",
       "name": "shop",
       "title": "企业商城",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": "某某实业",
-      "description": "独立商城插件：商品/分类/SKU/购物车/订单/售后/优惠券/订单日志。会员资料、等级折扣、余额、积分、地址、累计消费全部通过会员插件服务类或签名 API 调用，商城不读写任何 member_* 表。支持余额支付、积分抵扣、后台改价发货、订单 Excel 导出、业务员仅看自己客户订单。",
+      "description": "独立商城插件：商品/分类/SKU/购物车/订单/售后/优惠券/订单日志。会员资料、等级折扣、余额、积分、地址、累计消费全部通过会员插件服务类或签名 API 调用，商城不读写任何 member_* 表。支持余额支付、积分抵扣、后台改价发货、订单 Excel 导出、业务员仅看自己客户订单。前台导航入口已兼容墨白 ink、智敏 zhineng、钢铁、视维、投资等模板，桌面与手机菜单均自动挂载。",
       "file": "plugins/plugin-shop.zip",
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/plugins/plugin-shop.zip",
-      "size": 82973,
-      "sha256": "ff76d37f4c5283af908098c859d16e497d7c7e5126b43b918f94abbae6b6d4f9",
+      "size": 84571,
+      "sha256": "4246f3aed10bc22d905ab15afb79a44eef3ca535ed9c0a5d726947fae0131ad0",
       "requires": [
         "member"
       ]
@@ -210,6 +210,18 @@
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-ink.zip",
       "size": 214760,
       "sha256": "f7d487a407388d71425e70dfa82de20c6b3300784fea361322d590ec9ec470f6"
+    },
+    {
+      "type": "theme",
+      "name": "zhineng",
+      "title": "智敏科技模板",
+      "version": "1.1.1",
+      "author": "Modera CMS",
+      "description": "仿 temp-zhinengjiluyi / 智敏科技视觉：深墨蓝科技首屏、工业现场主视觉、四宫格产品矩阵、深色解决方案图墙、橙色 CTA 与暖纸内容区。栏目、文章、单页、搜索、Logo 与联系方式读取后台，PC 与手机共用一套模板；已适配商城与会员插件入口，手机菜单撑满全屏。",
+      "file": "themes/theme-zhineng.zip",
+      "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-zhineng.zip",
+      "size": 852935,
+      "sha256": "c491d6c732e96b960f6b5925e7847dcd5ac5f2db60d3d19bb777ae3b9ca10607"
     }
   ]
 }
