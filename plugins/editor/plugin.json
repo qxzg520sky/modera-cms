@@ -1,0 +1,22 @@
+{
+    "title": "编辑器切换",
+    "version": "1.0.0",
+    "author": "Modera CMS",
+    "description": "后台一键切换 WangEditor 富文本编辑器与 Vditor Markdown 编辑器。默认使用 WangEditor，切换后文章与单页编辑页自动生效，内容仍以 HTML 存储，兼容现有模板。",
+    "admin_menu": [
+        { "title": "编辑器设置", "url": "/admin/plugin/config/editor" }
+    ],
+    "config": [
+        {
+            "name": "editor_type",
+            "label": "默认编辑器",
+            "type": "select",
+            "default": "wangeditor",
+            "options": {
+                "wangeditor": "WangEditor · 富文本（默认）",
+                "vditor": "Vditor · Markdown 模式"
+            },
+            "hint": "切换后刷新文章/单页编辑页即可生效。Vditor 内容会转换为 HTML 后入库，文章与单页两种内容都兼容。"
+        }
+    ]
+}

@@ -315,6 +315,22 @@ if (!function_exists('rich_editor')) {
      */
     function rich_editor(string $name, string $value = '', string $height = '460px'): string
     {
+        // 编辑器切换插件：启用后由插件决定渲染 WangEditor 或 Vditor
+        try {
+            $editorPlugin = \think\facade\Db::name('plugin')->where('name', 'editor')->find();
+            if ($editorPlugin && (int) ($editorPlugin['enabled'] ?? 0) === 1) {
+                $editorService = root_path() . 'plugins/editor/service/Editor.php';
+                if (is_file($editorService)) {
+                    require_once $editorService;
+                    if (class_exists('plugins\\editor\\service\\Editor')) {
+                        return \plugins\editor\service\Editor::render($name, $value, $height);
+                    }
+                }
+            }
+        } catch (\Throwable $e) {
+            // 插件异常时回落到内置 WangEditor，保证后台可用
+        }
+
         static $loaded = false;
         static $seq    = 0;
         $seq++;
