@@ -861,6 +861,12 @@ class Updater
 
     private function archiveUrl(string $mirror, string $repo, string $branch): string
     {
+        $meta = $this->meta();
+        $pkg  = trim((string) ($meta['update']['package'] ?? ''));
+        if ($pkg !== '') {
+            // 仓库内预打包的核心更新包，避免整仓 ZIP 过大、被防火墙拦截或触发验证码
+            return $this->rawUrl($mirror, $repo, $branch, ltrim($pkg, '/'));
+        }
         if ($mirror === 'gitee') {
             return 'https://gitee.com/' . $repo . '/repository/archive/' . rawurlencode($branch) . '.zip';
         }
