@@ -1,0 +1,8 @@
+{
+  "name": "shuzhai",
+  "title": "书斋博客模板",
+  "version": "1.0.1",
+  "author": "Modera CMS",
+  "description": "安静的个人博客模板：桌面端固定 1180px 版心，760px 主栏 + 320px 侧栏，普通左右分栏，不做任何响应式断点；另配一套 themes/shuzhai/mobile 独立手机模板。封面优先取后台上传封面，没有则取正文第一张图，正文也没图时自动分配内置编辑风封面。含首页、分类/搜索列表、文章详情、单页与中英文双语。",
+  "screenshot": "themes/shuzhai/screenshot.png"
+}

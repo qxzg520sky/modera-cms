@@ -1,0 +1,8 @@
+{
+  "name": "weixing",
+  "title": "唯星工业模板",
+  "version": "1.1.0",
+  "author": "Modera CMS",
+  "description": "仿 temp-xiangjiao / 唯星工业视觉：白色品牌头、深色通栏导航、工业材料首屏、四品类图墙、产品卡片、深色新闻区、米色关于区与五栏页脚。栏目、文章、单页、Logo 与联系方式均读取后台，PC 与手机共用一套模板。 中英文双语（含手机端语言切换）",
+  "screenshot": "themes/weixing/screenshot.png"
+}

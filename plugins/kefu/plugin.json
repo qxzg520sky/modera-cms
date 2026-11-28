@@ -1,0 +1,13 @@
+{
+  "title": "在线客服",
+  "version": "1.0.0",
+  "author": "系统内置",
+  "description": "前台浮动客服面板：坐席名片（微信 / 企业微信 / QQ / 电话 / 邮箱 / 自定义链接 / 在线留言）、工作时间自动判断在线状态、访客留言与实时对话、后台会话收件箱与回复。安装时自动建表，卸载时删表删配置，站点完全还原。",
+  "admin_url": "/admin/plugin/kefu",
+  "uninstall": true,
+  "admin_menu": [
+    { "title": "客服坐席", "url": "/admin/plugin/kefu" },
+    { "title": "客服会话", "url": "/admin/plugin/kefu/chat" },
+    { "title": "客服设置", "url": "/admin/plugin/kefu/setting" }
+  ]
+}

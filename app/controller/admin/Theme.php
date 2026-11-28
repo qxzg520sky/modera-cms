@@ -26,4 +26,11 @@ class Theme extends Base
         }
         return $this->back('/admin/theme', '已切换到模板：' . $name);
     }
+
+    public function uninstall()
+    {
+        $name = trim((string) $this->request->post('name', ''));
+        [$ok, $msg] = ThemeManager::uninstall($name);
+        return $this->back('/admin/theme', $ok ? $msg : '卸载失败：' . $msg);
+    }
 }

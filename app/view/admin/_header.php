@@ -40,6 +40,7 @@ $groups = [
     ],
     '系统' => [
         ['key' => 'setting', 'title' => '系统设置', 'url' => '/admin/setting', 'ico' => '⚙️'],
+        ['key' => 'update', 'title' => '在线更新', 'url' => '/admin/update', 'ico' => '🔄'],
         ['key' => 'user', 'title' => '管理员', 'url' => '/admin/user', 'ico' => '👤'],
     ],
 ];

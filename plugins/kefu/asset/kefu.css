@@ -1,0 +1,246 @@
+/* 在线客服插件 · 前台样式（全部 kf- 前缀，不影响站点其它部分） */
+.kefu-root {
+  --kf-c: #2563eb;
+  --kf-c2: #1e40af;
+  --kf-ink: #111827;
+  --kf-muted: #6b7280;
+  --kf-line: #e5e7eb;
+  --kf-gap: 24px;
+  font: 14px/1.6 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: var(--kf-ink);
+}
+.kefu-right { right: var(--kf-gap); }
+.kefu-left { left: var(--kf-gap); }
+
+/* 悬浮按钮 */
+.kf-launcher {
+  position: fixed;
+  bottom: var(--kf-gap);
+  z-index: 9997;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--kf-c), var(--kf-c2));
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, .32);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.kefu-right .kf-launcher { right: var(--kf-gap); }
+.kefu-left .kf-launcher { left: var(--kf-gap); }
+.kf-launcher:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(37, 99, 235, .4); }
+.kf-launcher .kf-ico { font-size: 17px; line-height: 1; }
+.kf-launcher .kf-dot {
+  position: absolute;
+  top: -4px; right: -4px;
+  min-width: 18px; height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 11px;
+  line-height: 18px;
+  text-align: center;
+  display: none;
+  box-shadow: 0 0 0 2px #fff;
+}
+.kf-launcher.has-unread .kf-dot { display: block; }
+
+/* 面板 */
+.kf-panel {
+  position: fixed;
+  bottom: calc(var(--kf-gap) + 62px);
+  z-index: 9998;
+  width: 372px;
+  height: 552px;
+  max-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, .24);
+  opacity: 0;
+  transform: translateY(10px) scale(.98);
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.kefu-right .kf-panel { right: var(--kf-gap); transform-origin: bottom right; }
+.kefu-left .kf-panel { left: var(--kf-gap); transform-origin: bottom left; }
+.kf-panel.is-open { opacity: 1; transform: none; pointer-events: auto; }
+
+.kf-head {
+  flex: none;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, var(--kf-c), var(--kf-c2));
+  color: #fff;
+  position: relative;
+}
+.kf-head h3 { margin: 0; font-size: 16px; font-weight: 700; letter-spacing: .2px; }
+.kf-head p { margin: 4px 0 0; font-size: 12px; opacity: .85; }
+.kf-head .kf-state { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 12px; opacity: .95; }
+.kf-head .kf-state i { width: 7px; height: 7px; border-radius: 999px; background: #4ade80; box-shadow: 0 0 0 2px rgba(255,255,255,.25); }
+.kf-head .kf-state.off i { background: #fca5a5; }
+.kf-close {
+  position: absolute; top: 12px; right: 12px;
+  width: 28px; height: 28px;
+  border: 0; border-radius: 50%;
+  background: rgba(255, 255, 255, .18);
+  color: #fff; font-size: 16px; line-height: 1;
+  cursor: pointer;
+}
+.kf-close:hover { background: rgba(255, 255, 255, .3); }
+
+.kf-body { flex: 1; overflow-y: auto; overflow-x: hidden; padding: 14px 14px 4px; background: #f9fafb; }
+.kf-welcome {
+  background: #fff;
+  border: 1px solid var(--kf-line);
+  border-radius: 10px;
+  padding: 12px 13px;
+  font-size: 13px;
+  line-height: 1.75;
+  color: #374151;
+  white-space: pre-wrap;
+}
+.kf-welcome .kf-tip { display: block; margin-top: 8px; color: #b45309; font-size: 12px; }
+
+.kf-staffs { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin-top: 12px; }
+.kf-staff {
+  display: flex; gap: 10px; align-items: center;
+  min-width: 0;
+  background: #fff;
+  border: 1px solid var(--kf-line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.kf-staff:hover { border-color: var(--kf-c); box-shadow: 0 4px 14px rgba(37, 99, 235, .12); }
+.kf-ava {
+  width: 38px; height: 38px; border-radius: 50%;
+  flex: none; overflow: hidden;
+  background: linear-gradient(135deg, var(--kf-c), #38bdf8);
+  color: #fff; font-size: 14px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.kf-ava img { width: 100%; height: 100%; object-fit: cover; }
+.kf-staff .kf-info { flex: 1; min-width: 0; }
+.kf-staff .kf-name { font-size: 13px; font-weight: 600; }
+.kf-staff .kf-sub { font-size: 12px; color: var(--kf-muted); margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.kf-staff .kf-act {
+  flex: none; font-size: 12px;
+  white-space: nowrap;
+  padding: 5px 10px; border-radius: 999px;
+  background: rgba(37, 99, 235, .1);
+  color: var(--kf-c);
+  font-weight: 600;
+}
+
+/* 对话区 */
+.kf-chat { display: none; flex-direction: column; gap: 10px; margin-top: 14px; }
+.kf-chat.on { display: flex; }
+.kf-hide { display: none !important; }
+.kf-back {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--kf-muted);
+  padding: 8px 2px 0; cursor: pointer; user-select: none;
+}
+.kf-back:hover { color: var(--kf-c); }
+.kf-msg { max-width: 84%; padding: 9px 12px; border-radius: 12px; font-size: 13px; line-height: 1.7; white-space: pre-wrap; word-break: break-word; }
+.kf-msg.visitor { align-self: flex-end; background: var(--kf-c); color: #fff; border-bottom-right-radius: 4px; }
+.kf-msg.admin { align-self: flex-start; background: #fff; border: 1px solid var(--kf-line); border-bottom-left-radius: 4px; }
+.kf-msg.system { align-self: center; background: #eef2ff; color: #3730a3; font-size: 12px; max-width: 92%; }
+.kf-msg .kf-t { display: block; font-size: 10px; opacity: .65; margin-top: 3px; }
+.kf-typing { align-self: flex-start; font-size: 12px; color: var(--kf-muted); }
+
+/* 输入区 */
+.kf-foot { flex: none; padding: 10px 12px 12px; border-top: 1px solid var(--kf-line); background: #fff; }
+.kf-contact { display: none; gap: 8px; margin-bottom: 8px; }
+.kf-contact.on { display: flex; }
+.kf-contact input {
+  flex: 1; min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--kf-line);
+  border-radius: 8px;
+  font: inherit; font-size: 12px;
+  outline: none;
+}
+.kf-contact input:focus { border-color: var(--kf-c); }
+.kf-send { display: flex; gap: 8px; align-items: flex-end; }
+.kf-send textarea {
+  flex: 1; min-width: 0;
+  height: 42px; max-height: 110px;
+  padding: 10px 12px;
+  border: 1px solid var(--kf-line);
+  border-radius: 10px;
+  font: inherit; font-size: 13px;
+  resize: none; outline: none;
+  line-height: 1.5;
+}
+.kf-send textarea:focus { border-color: var(--kf-c); }
+.kf-send button {
+  flex: none;
+  padding: 10px 16px;
+  border: 0; border-radius: 10px;
+  background: var(--kf-c); color: #fff;
+  font: inherit; font-size: 13px; font-weight: 600;
+  cursor: pointer;
+}
+.kf-send button:disabled { opacity: .55; cursor: default; }
+.kf-hintline { margin-top: 6px; font-size: 11px; color: #9ca3af; text-align: center; }
+
+/* 二维码弹层 */
+.kf-qr-mask {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(15, 23, 42, .55);
+  display: none; align-items: center; justify-content: center;
+}
+.kf-qr-mask.on { display: flex; }
+.kf-qr-box {
+  width: 260px; padding: 18px;
+  background: #fff; border-radius: 14px; text-align: center;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, .3);
+}
+.kf-qr-box img { width: 200px; height: 200px; object-fit: contain; border-radius: 8px; }
+.kf-qr-box .kf-qr-name { font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+.kf-qr-box .kf-qr-tip { font-size: 12px; color: var(--kf-muted); margin-top: 10px; }
+
+/* 轻提示 */
+.kf-toast {
+  position: fixed; left: 50%; bottom: 90px;
+  transform: translateX(-50%);
+  z-index: 10000;
+  padding: 9px 16px;
+  background: rgba(17, 24, 39, .9);
+  color: #fff; font-size: 13px;
+  border-radius: 999px;
+  opacity: 0; pointer-events: none;
+  transition: opacity .2s ease;
+}
+.kf-toast.on { opacity: 1; }
+
+/* 手机端：面板铺开，并给底部的「电话咨询」工具条让位 */
+@media (max-width: 640px) {
+  .kefu-root { --kf-gap: 14px; }
+  .kf-launcher {
+    padding: 10px 14px;
+    font-size: 13px;
+    bottom: calc(var(--kf-gap) + 66px);
+  }
+  .kefu-right .kf-launcher { right: 12px; }
+  .kefu-left .kf-launcher { left: 12px; }
+  .kf-panel {
+    width: calc(100vw - 24px);
+    height: calc(100vh - 164px);
+    max-height: none;
+    bottom: calc(var(--kf-gap) + 126px);
+  }
+  .kefu-right .kf-panel { right: 12px; }
+  .kefu-left .kf-panel { left: 12px; }
+  .kf-body { padding: 12px 12px 4px; }
+}

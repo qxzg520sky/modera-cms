@@ -120,6 +120,7 @@ if (!empty($_SERVER['REQUEST_URI'])) {
     </nav>
 
     <div class="head-actions">
+      <?= lang_switcher('theme-lang') ?>
       <form class="head-search" action="<?= e(lang_path('/search')) ?>" method="get" role="search">
         <input type="search" name="kw" value="<?= e($kw ?? '') ?>" placeholder="<?= e(lang('搜索笔记')) ?>" aria-label="<?= e(lang('搜索笔记')) ?>">
         <button type="submit" aria-label="<?= e(lang('搜索')) ?>">

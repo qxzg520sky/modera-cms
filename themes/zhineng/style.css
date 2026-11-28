@@ -98,8 +98,6 @@ body.nav-open .menu-btn span:nth-child(3){top:20px;transform:rotate(-45deg)}
 .mobile-nav a span{font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.2em}
 .mobile-nav .m-tel{margin-top:28px;display:block;border:0;padding:0;color:var(--accent);font-size:26px;letter-spacing:.02em}
 body.nav-open .mobile-nav{display:block}
-body.nav-open .kf-launcher,body.nav-open .kf-toast{opacity:0;visibility:hidden;pointer-events:none}
-#mbfFabMount{display:none!important}
 
 /* ---------- 通用 ---------- */
 .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
@@ -430,7 +428,7 @@ body.nav-open .kf-launcher,body.nav-open .kf-toast{opacity:0;visibility:hidden;p
   .brand-mark{width:34px;height:34px;font-size:18px}
   .brand-text b{font-size:15px;letter-spacing:.17em}
   .brand-text span{font-size:8px}
-  .mobile-nav{top:70px;right:0;bottom:auto;left:0;height:calc(100vh - 70px)}
+  .mobile-nav{inset:70px 0 0}
   .hero-in{padding:46px 0 60px}
   .hero-copy h1{font-size:38px;line-height:1.1}
   .hero-copy p{font-size:14px;line-height:1.9}
@@ -528,3 +526,32 @@ body.nav-open .kf-launcher,body.nav-open .kf-toast{opacity:0;visibility:hidden;p
 .about-detail p{line-height:2}
 .contact-grid{align-items:start}
 @media (max-width:640px){.cta h2{font-size:21px}.about-detail{margin-top:44px}.solution-card,.solution-card:last-child{min-height:300px}}
+
+/* i18n header fit */
+.site-header .nav a,.site-header nav a,.header-nav a{white-space:nowrap}
+.site-header .header-cta,.site-header .btn,.theme-lang,.g2-tb-right{white-space:nowrap}
+.theme-lang{display:inline-flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.04em}
+.theme-lang a{padding:2px 6px;border-radius:4px;color:inherit;opacity:.7;text-decoration:none}
+.theme-lang a.active{opacity:1;background:rgba(0,0,0,.06)}
+@media(max-width:1200px){.site-header .nav a,.site-header nav a{padding-left:8px;padding-right:8px;font-size:13px}}
+
+/* header compact */
+@media (max-width:1500px){
+  header .nav,header nav.nav{gap:12px}
+  header .nav a,header nav.nav a{font-size:13px}
+  header .wrap.header-in,header .header-in{gap:14px}
+  .theme-lang{font-size:11px}
+}
+#mbfNavMount.mbf-topbar .mbf-guest .mbf-login{color:#4a4a4a;border-color:#cfcfcf}
+
+@media(max-width:1550px){
+.site-header .header-in{gap:10px!important}
+.site-header .brand-text span{display:none!important}
+.site-header .nav{gap:8px!important}
+.site-header .nav a{font-size:12px!important;padding-left:4px!important;padding-right:4px!important}
+.site-header .nav a em{display:none!important}
+.site-header .header-tel,.site-header .header-contact,.site-header .hotline{display:none!important}
+.site-header .header-side{gap:8px!important}
+.site-header .header-cta{font-size:11px!important;padding:0 10px!important}
+.site-header .theme-lang{font-size:10px!important;gap:2px!important}
+}

@@ -1,0 +1,11 @@
+{
+  "title": "多语言",
+  "version": "1.0.0",
+  "author": "系统内置",
+  "description": "给栏目、文章、单页、站点设置增加外语字段；前台 /en/ 前缀切换语言，PC 与手机模板同步切换。卸载后自动删除字段与数据，站点还原为纯中文。",
+  "admin_url": "/admin/plugin/multilang",
+  "uninstall": true,
+  "admin_menu": [
+    { "title": "多语言", "url": "/admin/plugin/multilang" }
+  ]
+}

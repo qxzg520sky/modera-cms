@@ -606,3 +606,11 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .mbf-guest .mbf-reg { background: var(--accent-deep); }
 .mbf-fab .mbf-guest .mbf-login, .mbf-fab .mbf-nav-trigger { background: var(--ink) !important; box-shadow: 0 8px 20px rgba(18, 22, 18, .2) !important; }
 .kf-launcher { background: var(--accent-deep) !important; box-shadow: 0 10px 24px rgba(18, 22, 18, .18) !important; }
+
+/* language switch 2.0.1 */
+.theme-lang{display:flex;align-items:center;gap:2px;padding:2px;border:1px solid rgba(15,40,80,.16);border-radius:3px}
+.theme-lang a{padding:5px 8px;font-size:11px;line-height:1;color:#5a6a80;text-decoration:none!important;border-radius:2px;white-space:nowrap}
+.theme-lang a.active{background:#0c2a4a;color:#fff;font-weight:700}
+.theme-lang a:hover{color:#1558b0}
+.theme-lang a.active:hover{color:#fff}
+@media(max-width:1100px){.theme-lang{display:none}}

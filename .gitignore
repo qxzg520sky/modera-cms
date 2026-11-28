@@ -22,6 +22,10 @@ Thumbs.db
 *.sql.gz
 *.zip
 *.7z
+*.rar
 *.log
+# 模板展示静态站与整站压缩包不纳入主仓库
+/showcase/
+/tempqiyecms.rar
 # 发行用模块包：允许追踪 modules/store 下的 zip
 !modules/store/*.zip

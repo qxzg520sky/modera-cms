@@ -41,12 +41,14 @@ Route::group('admin', function () {
     // 模板
     Route::get('theme', 'admin.Theme/index');
     Route::post('theme/enable', 'admin.Theme/enable');
+    Route::post('theme/uninstall', 'admin.Theme/uninstall');
 
     // 模块中心（主题 / 插件按需安装）
     Route::get('module', 'admin.Module/index');
     Route::post('module/install', 'admin.Module/install');
     Route::post('module/upload', 'admin.Module/upload');
     Route::post('module/remove', 'admin.Module/remove');
+    Route::post('module/uninstall', 'admin.Module/uninstall');
 
     // 插件
     Route::get('plugin', 'admin.Plugin/index');
@@ -62,6 +64,12 @@ Route::group('admin', function () {
     // 系统设置
     Route::get('setting', 'admin.Setting/index');
     Route::post('setting/save', 'admin.Setting/save');
+
+    // 在线更新（程序核心，支持 GitHub / Gitee 与回滚）
+    Route::get('update', 'admin.Update/index');
+    Route::post('update/check', 'admin.Update/check');
+    Route::post('update/run', 'admin.Update/run');
+    Route::post('update/rollback', 'admin.Update/rollback');
 
     // 管理员
     Route::get('user', 'admin.User/index');

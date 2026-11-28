@@ -1,0 +1,25 @@
+{
+  "name": "modera-cms",
+  "version": "1.0.1",
+  "release": "2026-11-28",
+  "repo": {
+    "github": "qxzg520sky/modera-cms",
+    "gitee": "51iqx/modera-cms",
+    "branch": "main"
+  },
+  "update": {
+    "include": [
+      "app",
+      "route",
+      "config",
+      "extend",
+      "error",
+      "public/static/admin",
+      "version.json"
+    ],
+    "exclude": [
+      "config/update.php"
+    ]
+  }
+}
+

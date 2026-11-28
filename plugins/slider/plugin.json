@@ -1,0 +1,11 @@
+{
+  "title": "轮播广告",
+  "version": "1.0.0",
+  "author": "系统内置",
+  "description": "后台维护首页大图轮播广告：上传图片、填标题/小标题/摘要、设置链接与按钮文字、排序、单条启用停用。启用插件后首页显示这些广告；停用插件后自动回到模板自带的轮播图。安装自动建表（首次启用用站内文章封面生成 3 条示例），卸载删表清配置。",
+  "admin_url": "/admin/plugin/slider",
+  "uninstall": true,
+  "admin_menu": [
+    { "title": "轮播广告", "url": "/admin/plugin/slider" }
+  ]
+}

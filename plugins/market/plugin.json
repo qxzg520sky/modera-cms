@@ -1,0 +1,24 @@
+{
+    "name": "market",
+    "title": "应用市场",
+    "version": "1.0.0",
+    "author": "Modera",
+    "description": "在线浏览并下载安装 Modera 插件与模板。程序默认只带 default 模板和 example 插件，其余模块从应用市场按需获取，不再随主程序打包。",
+    "admin_menu": [
+        { "title": "应用市场", "url": "/admin/plugin/market", "ico": "🛍️" }
+    ],
+    "config": [
+        {
+            "name": "catalog_url",
+            "label": "应用市场目录地址",
+            "type": "text",
+            "default": "https://gitee.com/51iqx/modera-cms/raw/market/catalog.json"
+        },
+        {
+            "name": "fallback_url",
+            "label": "备用目录地址（可留空）",
+            "type": "text",
+            "default": "https://raw.githubusercontent.com/qxzg520sky/modera-cms/market/catalog.json"
+        }
+    ]
+}

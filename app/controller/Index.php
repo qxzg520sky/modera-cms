@@ -141,8 +141,20 @@ class Index extends BaseController
         ]);
     }
 
-    public function show(int $id = 0)
+    public function show($key = 0)
     {
+        $key = trim((string) $key);
+
+        // 新链接统一走数字 id；旧缓存里的 /a/{slug} 兼容并 301 到规范地址
+        if ($key !== '' && !ctype_digit($key)) {
+            $hit = Db::name('article')->where('slug', $key)->where('status', 1)->find();
+            if (!$hit) {
+                return redirect(lang_path('/'));
+            }
+            return redirect(lang_path('/a/' . (int) $hit['id']), 301);
+        }
+
+        $id  = (int) $key;
         $row = Db::name('article')->where('id', $id)->where('status', 1)->find();
         if (!$row) {
             return redirect(lang_path('/'));
@@ -214,6 +226,8 @@ class Index extends BaseController
     public function asset(string $file = '')
     {
         $file = basename(str_replace('\\', '/', $file));
+        // 兼容旧页面缓存里的 cover-1.jpg / cover_1.jpg，统一映射到 cover1.jpg
+        $file = preg_replace('/^cover[-_](\d+)\.(jpg|jpeg|png)$/i', 'cover$1.$2', $file);
         if (!preg_match('/^[\w\-\.]+\.(css|js|png|jpg|jpeg|gif|svg|webp)$/i', $file)) {
             return response('', 404);
         }
@@ -235,6 +249,29 @@ class Index extends BaseController
             'svg' => 'image/svg+xml', 'webp' => 'image/webp',
         ][$ext] ?? 'application/octet-stream';
 
+        return response((string) file_get_contents($path), 200, ['Content-Type' => $mime]);
+    }
+
+    /**
+     * 后台静态资源：部分服务器未放行 public/static 直连，这里兜底输出
+     */
+    public function adminAsset(string $file = 'admin.css')
+    {
+        $file = basename(str_replace('\\', '/', $file));
+        if (!preg_match('/^[\w\-\.]+\.(css|js|png|jpg|jpeg|gif|svg|webp|woff|woff2)$/i', $file)) {
+            return response('', 404);
+        }
+        $path = public_path() . 'static' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . $file;
+        if (!is_file($path)) {
+            return response('', 404);
+        }
+        $ext  = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+        $mime = [
+            'css' => 'text/css', 'js' => 'application/javascript', 'png' => 'image/png',
+            'jpg' => 'image/jpeg', 'jpeg' => 'image/jpeg', 'gif' => 'image/gif',
+            'svg' => 'image/svg+xml', 'webp' => 'image/webp',
+            'woff' => 'font/woff', 'woff2' => 'font/woff2',
+        ][$ext] ?? 'application/octet-stream';
         return response((string) file_get_contents($path), 200, ['Content-Type' => $mime]);
     }
 }

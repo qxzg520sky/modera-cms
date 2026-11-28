@@ -1,0 +1,11 @@
+{
+  "title": "缓存优化",
+  "version": "1.0.0",
+  "author": "系统内置",
+  "description": "站点加速：首页与文章页 HTML 静态缓存（命中直接输出文件，不查库不渲染，可设过期时间），后台一键清理缓存；静态资源（/uploads、/static）写入长过期头，浏览器二次访问不再回源。后台保存文章/栏目/单页/设置后会自动清空页面缓存。停用插件后所有缓存立即失效、过期头配置自动摘除，站点行为完全还原。",
+  "admin_url": "/admin/plugin/cache",
+  "uninstall": true,
+  "admin_menu": [
+    { "title": "缓存优化", "url": "/admin/plugin/cache" }
+  ]
+}

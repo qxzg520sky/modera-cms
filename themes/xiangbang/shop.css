@@ -1,0 +1,199 @@
+/* 象邦自然系模板 · 商城皮肤，覆盖 plugins/shop 默认蓝色 */
+body.xb-shop {
+  --forest: #15251b;
+  --forest-2: #21382a;
+  --leaf: #8fb23f;
+  --lime: #c4d98a;
+  --cream: #f3f0e7;
+  --paper: #fbfaf6;
+  --ink: #1c2a21;
+  --muted: #687267;
+  --line: rgba(21, 37, 27, .14);
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "MiSans", "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.xb-shop a { color: inherit; }
+
+/* 页头 */
+.xb-shop .sp-nav {
+  background: rgba(243, 240, 231, .96);
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+.xb-shop .sp-nav .in { max-width: 1280px; height: 80px; gap: 26px; padding: 0 28px; }
+.xb-shop .sp-logo {
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", Georgia, serif;
+  color: var(--forest);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.xb-shop .sp-logo span { color: #8a9484; font-size: 10px; letter-spacing: .16em; font-weight: 500; }
+.xb-shop .sp-nav .links { gap: 22px; }
+.xb-shop .sp-nav .links a { color: #5d675a; font-size: 12.5px; letter-spacing: .04em; }
+.xb-shop .sp-nav .links a:hover { color: var(--forest); opacity: 1; }
+.xb-shop .sp-nav .user { color: #8a9484; font-size: 11.5px; }
+.xb-shop .sp-badge-count { background: var(--forest); color: #fff; border-radius: 999px; }
+
+/* 主视觉 */
+.xb-shop .sp-hero {
+  position: relative;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 92px 0 82px;
+  color: var(--cream);
+  background:
+    linear-gradient(90deg, rgba(15, 29, 20, .88) 0%, rgba(21, 37, 27, .68) 54%, rgba(21, 37, 27, .28) 100%),
+    url("/theme/hero.jpg") center 58% / cover no-repeat;
+}
+.xb-shop .sp-hero .sp-wrap { max-width: 1280px; padding: 0 28px; }
+.xb-shop .sp-hero h1 {
+  margin: 0 0 14px;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", Georgia, serif;
+  font-size: clamp(34px, 4.2vw, 58px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: .02em;
+}
+.xb-shop .sp-hero p { max-width: 620px; margin: 0; color: rgba(243, 240, 231, .78); font-size: 14px; }
+.xb-shop .sp-hero p[style] { color: rgba(196, 217, 138, .86) !important; }
+
+/* 内容区 */
+.xb-shop .sp-section { max-width: 1280px; margin: 0 auto; padding: 48px 28px 40px; }
+.xb-shop .sp-filter {
+  padding: 16px;
+  margin-bottom: 26px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+.xb-shop .sp-filter input,
+.xb-shop .sp-filter select {
+  min-height: 42px;
+  padding: 9px 13px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: #fff;
+  color: var(--ink);
+  font-size: 13px;
+  outline: none;
+}
+.xb-shop .sp-filter input:focus,
+.xb-shop .sp-filter select:focus { border-color: #7e9872; box-shadow: 0 0 0 3px rgba(126, 152, 114, .12); }
+
+.xb-shop .sp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: var(--forest);
+  color: #fff;
+  font-size: 12.5px;
+  letter-spacing: .04em;
+}
+.xb-shop .sp-btn:hover { background: var(--forest-2); color: #fff; opacity: 1; }
+.xb-shop .sp-btn.ghost { background: transparent; color: var(--forest); border: 1px solid var(--line); }
+.xb-shop .sp-btn.ghost:hover { background: rgba(255, 255, 255, .5); }
+.xb-shop .sp-btn.warn { background: #b8873e; color: #fff; }
+
+/* 商品网格 */
+.xb-shop .sp-grid { grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); gap: 22px; }
+.xb-shop .sp-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  box-shadow: none;
+  transition: transform .25s, border-color .25s;
+}
+.xb-shop .sp-product:hover { transform: translateY(-4px); border-color: rgba(21, 37, 27, .3); }
+.xb-shop .sp-cover {
+  height: 220px;
+  background: linear-gradient(135deg, #e7e0d1, #d8d0be);
+  color: var(--forest);
+  font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
+  font-size: 56px;
+  font-weight: 700;
+}
+.xb-shop .sp-pbody { padding: 18px 20px 20px; gap: 7px; }
+.xb-shop .sp-ptitle {
+  min-height: 52px;
+  font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.xb-shop .sp-psub { color: var(--muted); font-size: 12px; }
+.xb-shop .sp-price {
+  margin-top: 6px;
+  color: var(--forest);
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+.xb-shop .sp-price small { color: #8a9484; font-size: 11px; }
+.xb-shop .sp-tag { border-radius: 999px; background: #e9eddf; color: #526243; font-size: 10.5px; }
+.xb-shop .sp-tag.hot { background: #efe4cf; color: #8a5a2b; }
+.xb-shop .sp-pager a { border-radius: 999px; background: var(--paper); border-color: var(--line); }
+.xb-shop .sp-pager a.on { background: var(--forest); border-color: var(--forest); color: #fff; }
+
+/* 商品详情 */
+.xb-shop .sp-crumb { margin: 24px 0 0; color: #8a9484; }
+.xb-shop .sp-detail { grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); gap: 46px; }
+.xb-shop .sp-detail .big {
+  height: 460px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #e7e0d1, #d8d0be);
+  color: var(--forest);
+}
+.xb-shop .sp-sku label { border-radius: 0; border-color: var(--line); background: #fff; }
+.xb-shop .sp-sku input:checked + label { border-color: var(--forest); background: #eef1e4; color: var(--forest); }
+.xb-shop .sp-qty { border-radius: 0; border-color: var(--line); }
+.xb-shop .sp-qty button { background: #ece8dc; color: var(--forest); }
+.xb-shop .sp-summary { padding: 18px 20px; background: var(--paper); border: 1px solid var(--line); }
+.xb-shop .sp-summary .total span:last-child { color: var(--forest); }
+.xb-shop .sp-address { border-radius: 0; border-color: var(--line); background: #fff; }
+.xb-shop .sp-address.on { border-color: var(--forest); background: #f2f3e9; }
+.xb-shop .sp-note { border-radius: 0; }
+.xb-shop .sp-table th { background: #efecdf; color: #6d7568; }
+.xb-shop .sp-table th, .xb-shop .sp-table td { border-bottom-color: var(--line); }
+.xb-shop .sp-thumb { border-radius: 0; background: #ded5c1; color: var(--forest); }
+.xb-shop .sp-status { border-radius: 999px; }
+.xb-shop .sp-tabs a { border-radius: 999px; background: var(--paper); border-color: var(--line); color: var(--muted); }
+.xb-shop .sp-tabs a.on { background: var(--forest); border-color: var(--forest); color: #fff; }
+
+/* 页脚 */
+.xb-shop .sp-foot {
+  margin-top: 28px;
+  padding: 38px 20px;
+  background: var(--forest);
+  color: rgba(243, 240, 231, .58);
+  font-size: 11.5px;
+  letter-spacing: .04em;
+}
+.xb-shop .sp-foot a { color: var(--lime); }
+
+@media (max-width: 860px) {
+  .xb-shop .sp-nav .in { height: auto; min-height: 66px; padding: 10px 18px; flex-wrap: wrap; gap: 8px 18px; }
+  .xb-shop .sp-nav .links { gap: 13px; margin-left: 0; }
+  .xb-shop .sp-hero { padding: 64px 0 58px; }
+  .xb-shop .sp-hero h1 { font-size: 34px; }
+  .xb-shop .sp-section { padding: 32px 18px; }
+  .xb-shop .sp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .xb-shop .sp-cover { height: 150px; font-size: 38px; }
+  .xb-shop .sp-pbody { padding: 13px; }
+  .xb-shop .sp-ptitle { min-height: 40px; font-size: 15px; }
+  .xb-shop .sp-detail .big { height: 300px; }
+}
+@media (max-width: 520px) {
+  .xb-shop .sp-nav .links a { font-size: 11.5px; }
+  .xb-shop .sp-grid { grid-template-columns: 1fr; }
+  .xb-shop .sp-cover { height: 210px; }
+}

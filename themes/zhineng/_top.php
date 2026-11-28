@@ -1,4 +1,24 @@
 <?php
+if (!function_exists('theme_en_filter')) {
+    function theme_en_filter(string $html): string {
+        static $map = null;
+        if ($map === null) { $map = include __DIR__ . '/_en.php'; }
+        return preg_replace_callback('/>([^<>]*)</u', static function (array $m) use ($map): string {
+            $text = $m[1];
+            $trim = trim($text);
+            if ($trim === '' || !preg_match('/\p{Han}/u', $trim)) { return $m[0]; }
+            if (!isset($map[$trim])) { return $m[0]; }
+            $pos = strpos($text, $trim);
+            return '>' . substr($text, 0, $pos) . $map[$trim] . substr($text, $pos + strlen($trim)) . '<';
+        }, $html);
+    }
+}
+if (current_lang() === 'en' && !isset($GLOBALS['__themeOb'])) {
+    ob_start('theme_en_filter');
+    $GLOBALS['__themeOb'] = ob_get_level();
+}
+?>
+<?php
 $siteName = setting('site_name', '企业网站');
 $phone = setting('site_phone', '');
 $email = setting('site_email', '');
@@ -50,7 +70,7 @@ $contactUrl = $contactPage ? lang_path('/p/' . $contactPage['slug']) : lang_path
 <title><?= e($seoTitle) ?></title>
 <meta name="keywords" content="<?= e($seoKeywords ?? setting('site_keywords', '')) ?>">
 <meta name="description" content="<?= e($seoDesc ?? setting('site_description', '')) ?>">
-<link rel="stylesheet" href="/theme/style.css?v=1.1.2">
+<link rel="stylesheet" href="/theme/style.css?v=1.1.0">
 <?php if (!empty(multilang_config()['langs'])): ?>
 <?php foreach (multilang_config()['langs'] as $lc): ?>
 <link rel="alternate" hreflang="<?= e($lc) ?>" href="<?= e(lang_url($lc)) ?>">
@@ -70,8 +90,9 @@ $contactUrl = $contactPage ? lang_path('/p/' . $contactPage['slug']) : lang_path
         <a class="<?= $it['now'] ? 'active' : '' ?>" href="<?= e($it['url']) ?>"><?= e($it['name']) ?></a>
       <?php endforeach; ?>
     </nav>
-    <div class="header-side">
+    <div class="header-side g2-nav-act">
       <?php if ($phone): ?><div class="header-tel">服务热线 <b><?= e($phone) ?></b></div><?php endif; ?>
+      <?= lang_switcher('theme-lang') ?>
       <a class="header-cta" href="<?= e($contactUrl) ?>">获取方案 <span class="arrow">↗</span></a>
       <button class="menu-btn" type="button" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>

@@ -4,15 +4,15 @@
 
 前台：`/`　后台：`/admin`　默认演示主题：**为科工业（weike）**
 
-> 全部主题与插件的一句话功能说明见 [MODULES.md](MODULES.md)。
+![Modera CMS 演示首页](themes/weike/screenshot.png)
 
 ## 为什么用它
 
 - **不依赖第三方模板引擎**：主题就是一组 PHP 文件，复制目录、改 `theme.json` 就能开发新模板。
-- **插件即模块包**：插件以 zip 包按需安装，后台“模块中心”识别后一键安装、启用、停用、卸载；默认包只带 `example`，其余模块从应用市场或 `market` 分支单独下载。
+- **插件即模块包**：插件以 zip 包放在 `modules/store/`，后台“模块中心”识别后一键安装、启用、停用、卸载。
 - **自带企业级功能**：文章、无限级栏目、单页、SEO、轮播、多语言、在线客服、访问统计、数据库备份、会员、商城。
 - **前台后台同一套数据**：栏目、文章、单页、导航、设置和插件数据全部来自后台，不写死页面。
-- **响应式主题**：PC、平板、手机共用一套模板，默认带 1 套企业主题，另外 6 套从应用市场按需下载。
+- **响应式主题**：PC、平板、手机共用一套模板，内置 10 套企业主题。
 - **可离线部署**：`vendor/` 已随仓库提供，不装 Composer 也能跑；安装向导自动建表。
 
 ## 环境要求
@@ -45,13 +45,8 @@ Apache 直接把网站根目录设为 `public/`，项目自带 `.htaccess`。Ngi
 root /path/to/modera-cms/public;
 index index.php;
 
-# 主题资源由 PHP 动态输出，必须先于默认的 .css 正则规则
-location ^~ /theme/ {
-    try_files $uri /index.php?s=$uri&$args;
-}
-
 location / {
-    try_files $uri $uri/ /index.php?s=$uri&$args;
+    try_files $uri $uri/ /index.php?$query_string;
 }
 
 location ~ \.php$ {
@@ -61,8 +56,6 @@ location ~ \.php$ {
     include fastcgi_params;
 }
 ```
-
-> 宝塔 Nginx 若出现“前台没样式、`/theme/style.css` 404”，这是 Nginx 默认 `.css` 静态规则截走了动态主题资源，不是程序问题。处理步骤见 [docs/nginx-theme-404.md](docs/nginx-theme-404.md)。
 
 ### 3. 建库并配置 `.env`
 
@@ -105,35 +98,54 @@ http://你的域名/admin
 3. 不要重复访问安装页；已有数据时再次安装不会清空数据，但也没有必要。
 4. 生产环境关闭目录列表，定期备份数据库。
 
-## 按需安装模块
+## 插件下载
 
-主程序默认只带 `themes/default` 和 `plugins/example`；`modules/store/` 也只保留 `plugin-example.zip`。其余 8 个插件、6 套模板不再放进主仓库，统一放在独立的 **market 下载分支**，需要哪个单独下载，避免 clone 主程序时被迫带走全部模块。
+9 个插件都已经打成后台模块中心可直接安装的 zip 包，放在仓库的 [`modules/store/`](modules/store/) 目录，**每个都能单独下载**：
 
-### 应用市场（推荐）
+| 插件 | 版本 | 功能 | 下载 |
+| --- | --- | --- | --- |
+| 缓存优化 `cache` | 1.0.0 | 首页/文章页 HTML 静态缓存、静态资源长过期头、后台一键清缓存 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/plugin-cache.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/plugin-cache.zip) |
+| 数据库备份 `dbbackup` | 1.0.0 | 一键备份/下载/还原 SQL、上传还原、定时备份、旧备份清理 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/plugin-dbbackup.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/plugin-dbbackup.zip) |
+| 在线客服 `kefu` | 1.0.0 | 浮动客服面板、坐席名片、工作时间判断、留言与实时会话 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/plugin-kefu.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/plugin-kefu.zip) |
+| 企业会员 `member` | 1.1.1 | 会员资料、等级折扣、余额、积分、地址、业务员、Excel 导入导出 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/plugin-member.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/plugin-member.zip) |
+| 多语言 `multilang` | 1.0.0 | 栏目/文章/单页/设置增加外语字段，`/en/` 前缀切换语言 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/plugin-multilang.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/plugin-multilang.zip) |
+| 企业商城 `shop` | 1.0.0 | 商品、分类、SKU、购物车、订单、售后、优惠券、余额支付、积分抵扣 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/plugin-shop.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/plugin-shop.zip) |
+| 首页轮播 `slider` | 1.0.0 | 后台维护首页大图、标题、按钮、链接、排序与启停 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/plugin-slider.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/plugin-slider.zip) |
+| 访问统计 `stats` | 1.0.0 | UV/PV、访问趋势、来路来源、热门文章与页面排行、最近访客 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/plugin-stats.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/plugin-stats.zip) |
+| 示例插件 `example` | 1.0.0 | 后台菜单、配置项、独立控制器和前台路由的开发脚手架 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/plugin-example.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/plugin-example.zip) |
 
-先下载应用市场插件，上传到“模块中心”安装，再到“插件扩展”启用，后台左侧会出现“应用市场”：
+### 安装插件（两种方式）
 
-- Gitee：[plugin-market.zip](https://gitee.com/51iqx/modera-cms/raw/market/plugins/plugin-market.zip)
-- GitHub：[plugin-market.zip](https://raw.githubusercontent.com/qxzg520sky/modera-cms/market/plugins/plugin-market.zip)
+**方式一：仓库自带包**
 
-应用市场读取远程 `catalog.json`，列出可安装插件/模板，支持单独下载或在线安装；目录地址可在“市场设置”里替换成自己的私有源。
+1. 把对应 `plugin-*.zip` 放进站点的 `modules/store/` 目录（仓库里已经放好）。
+2. 登录后台，打开“模块中心”。
+3. 在“模块仓库”找到插件，点“安装”或“安装并启用”。
+4. 到“插件扩展”里确认状态；需要配置的插件点“配置”。
 
-### 手动下载
+**方式二：后台上传**
 
-全部模块的单独下载地址、catalog 格式和自建模块源说明：
+1. 后台打开“模块中心”。
+2. 上传 `.zip` 模块包。
+3. 上传后会自动解压安装，再到“插件扩展”启用。
 
-- [market 分支 README（Gitee）](https://gitee.com/51iqx/modera-cms/blob/market/README.md)
-- [market 分支 README（GitHub）](https://github.com/qxzg520sky/modera-cms/blob/market/README.md)
+> 安装插件时，插件自己的 `install.php` 会建表或加字段；停用/卸载时会按插件声明清理。生产环境操作前先备份数据库。
 
-### 安装模块
+## 主题下载
 
-**后台上传**：模块中心 → 上传 `.zip` → 自动解压安装 → 到“插件扩展”或“模板主题”启用。
+仓库同时附带 8 套响应式企业主题模块包：
 
-**本地仓库包**：把 zip 放进 `modules/store/`，模块中心会列出；主仓库只带 `plugin-example.zip`。
+| 主题 | 版本 | 风格 | 下载 |
+| --- | --- | --- | --- |
+| 默认企业 `default` | 1.0.0 | 简洁企业官网，轮播 + 栏目 + 资讯 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/theme-default.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/theme-default.zip) |
+| 钢铁风 `gangtie` | 1.0.0 | 钢铁贸易、蓝白工业风、产品墙与案例块 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/theme-gangtie.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/theme-gangtie.zip) |
+| 工业橙 `gangtie2` | 1.0.0 | 黑橙工业风、全屏轮播、方案分栏、询价表单 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/theme-gangtie2.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/theme-gangtie2.zip) |
+| 视维蓝 `shiwei` | 1.0.0 | 白底蓝字、框线标题、解决方案与产品横滑 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/theme-shiwei.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/theme-shiwei.zip) |
+| 投资集团 `touzi` | 1.0.0 | 金融投资集团、蓝色首屏、业务切换与集团风采 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/theme-touzi.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/theme-touzi.zip) |
+| 为科工业 `weike` | 1.0.0 | 蓝白工业、建筑横幅、产品/方案/案例/新闻，兼容商城导航 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/theme-weike.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/theme-weike.zip) |
+| 智敏科技 `zhineng` | 1.0.0 | 深墨蓝 × 安全橙、工业首屏、四宫格产品、深色方案图墙、橙色转化带 | [GitHub](https://github.com/qxzg520sky/modera-cms/raw/main/modules/store/theme-zhineng.zip) · [Gitee](https://gitee.com/51iqx/modera-cms/raw/main/modules/store/theme-zhineng.zip) |
 
-> 插件 `install.php` 会建表/加字段；生产环境操作前先备份数据库。
->
-> 后台“卸载”会删除 `themes/{name}` 或 `plugins/{name}` 整个目录，并清理模块记录；需要恢复时回到应用市场重新下载即可。
+安装主题和安装插件一样：包放进 `modules/store/`，后台“模块中心”点安装，再到“模板主题”启用。
 
 ## 目录结构
 
@@ -148,9 +160,9 @@ public/                Web 入口，站点根目录指向这里
   static/              后台与公共静态资源
   uploads/             后台上传文件（运行数据，默认不纳入版本库）
 route/                 前台与后台路由
-themes/                默认主题源码，仅保留 default；其他主题在 market 分支
-plugins/               默认插件源码，仅保留 example；其他插件在 market 分支
-modules/store/         本地模块 zip 包，主仓库仅保留 plugin-example.zip
+themes/                主题源码（default、gangtie、gangtie2、shiwei、touzi、weike、xiangbang、weixing、ink、zhineng）
+plugins/               插件源码（cache、dbbackup、example、kefu、member、multilang、shop、slider、stats）
+modules/store/         可安装的插件/主题 zip 包
 runtime/               运行缓存、日志、备份（默认不纳入版本库）
 vendor/                ThinkPHP 框架与依赖
 ```
@@ -188,7 +200,7 @@ plugin-shop.zip
 
 ## 已验证范围
 
-示例插件与 market 分支中的 8 个插件已在 PHP 8.2 + MySQL 5.7 环境完成安装与核心流程测试，包括：
+本仓库中的 9 个插件已在 PHP 8.2 + MySQL 5.7 环境完成安装与核心流程测试，包括：
 
 - 后台插件入口、配置项、启停与卸载；
 - 文章/栏目/单页/轮播/多语言前台联动；
@@ -209,7 +221,31 @@ plugin-shop.zip
 4. 如需建表，在 `install.php` 里执行 SQL；在 `uninstall.php` 里清理。
 5. 后台“模块中心”刷新即可看到；打包时保持“demo/plugin.json”的顶层结构。
 
-## 安全建议
+## 在线更新
+
+后台 **系统 → 在线更新**（`/admin/update`）可以从 GitHub 或 Gitee 拉取主程序核心更新，不用再登录服务器解压覆盖。
+
+更新范围固定为 `app`、`route`、`config`、`extend`、`error`、`public/static/admin` 和 `version.json`。不会覆盖 `.env`、`uploads/`、`themes/`、`plugins/`、`modules/`、`vendor/`、数据库和运行时数据。
+
+**发布一次新版本**
+
+1. 改完代码后修改 `version.json`：`version` 递增，`release` 写成当天日期（如 `2026-11-28`）。
+2. 同时推送到 GitHub 和 Gitee 的 `main` 分支，确认远端 `version.json` 能访问。
+3. 后台进入“在线更新”，选更新源和分支，点 **检查更新**。
+4. 先点 **试运行差异**，确认“待更新文件”清单没有意外文件。
+5. 再点 **立即更新**。系统会先把旧文件打包到 `runtime/update/backup-日期-时间.zip`，然后逐个替换；失败会自动回滚。
+6. 页面有异常时，在同一页点 **回滚上次更新** 恢复。
+
+**安全限制**
+
+- 远端提交日期早于本地 `version.json` 的 `release` 时会拒绝更新，防止远端分支落后把本地新功能覆盖掉。
+- 远端 `version` 低于本地版本时拒绝更新。
+- ZIP 路径穿越、超大包（120MB 上限）、并发更新都会被拒绝；更新过程使用 `flock` 锁。
+- 下载支持内置 Mozilla CA（`app/service/cacert.pem`），Windows PHP 没有配置 `curl.cainfo` 也能访问 GitHub。
+
+**注意**
+
+在线更新只适合更新程序核心。主题、插件、模块请继续走“模板主题 / 模块中心”安装；本地二次开发过的 `app`、`route` 文件会被远端同名文件覆盖，更新前先看试运行清单，必要时先提交到 Git。
 
 - 不要提交 `.env`、数据库密码、后台账号密码、`runtime/` 日志和 `uploads/` 用户文件。
 - 上线后把 `APP_DEBUG` 设为 `false`。
@@ -227,5 +263,5 @@ plugin-shop.zip
 
 - GitHub：<https://github.com/qxzg520sky/modera-cms>
 - Gitee：<https://gitee.com/51iqx/modera-cms>
-- 模块下载区：[GitHub market 分支](https://github.com/qxzg520sky/modera-cms/tree/market) · [Gitee market 分支](https://gitee.com/51iqx/modera-cms/tree/market)
+- 模块包目录：[GitHub](https://github.com/qxzg520sky/modera-cms/tree/main/modules/store) · [Gitee](https://gitee.com/51iqx/modera-cms/tree/main/modules/store)
 
