@@ -1,7 +1,7 @@
 {
   "name": "Modera Module Market",
   "version": 1,
-  "updated_at": "2026-11-28 08:48:29",
+  "updated_at": "2026-11-28 09:22:02",
   "base": "https://gitee.com/51iqx/modera-cms/raw/market/",
   "items": [
     {
@@ -68,13 +68,13 @@
       "type": "plugin",
       "name": "shop",
       "title": "企业商城",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "author": "某某实业",
       "description": "独立商城插件：商品/分类/SKU/购物车/订单/售后/优惠券/订单日志。会员资料、等级折扣、余额、积分、地址、累计消费全部通过会员插件服务类或签名 API 调用，商城不读写任何 member_* 表。支持余额支付、积分抵扣、后台改价发货、订单 Excel 导出、业务员仅看自己客户订单。前台导航入口已兼容墨白 ink、智敏 zhineng、钢铁、视维、投资等模板，桌面与手机菜单均自动挂载。",
       "file": "plugins/plugin-shop.zip",
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/plugins/plugin-shop.zip",
-      "size": 84571,
-      "sha256": "4246f3aed10bc22d905ab15afb79a44eef3ca535ed9c0a5d726947fae0131ad0",
+      "size": 85083,
+      "sha256": "4928242108ba27b311e081f3639f0bb0e52f241a910d060e0ee47709737c391f",
       "requires": [
         "member"
       ]
