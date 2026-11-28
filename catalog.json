@@ -1,7 +1,7 @@
 {
   "name": "Modera Module Market",
   "version": 1,
-  "updated_at": "2026-11-27 20:03:13",
+  "updated_at": "2026-11-28 08:48:29",
   "base": "https://gitee.com/51iqx/modera-cms/raw/market/",
   "items": [
     {
@@ -222,6 +222,42 @@
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-zhineng.zip",
       "size": 852935,
       "sha256": "c491d6c732e96b960f6b5925e7847dcd5ac5f2db60d3d19bb777ae3b9ca10607"
+    },
+    {
+      "type": "theme",
+      "name": "dianti",
+      "title": "富士恒电梯模板",
+      "version": "1.0.0",
+      "author": "Modera CMS",
+      "description": "仿深圳富士恒电梯视觉：深蓝城市天际线首屏、白色通栏吸顶导航、蓝色章节编号、三列产品卡片、深色工程案例图墙、四列服务优势、左图右闻新闻布局、蓝色 CTA 与深蓝页脚。栏目、文章、单页、搜索、Logo 与联系方式读取后台，PC 与手机共用一套模板，手机端单列卡片与全屏抽屉菜单。",
+      "file": "themes/theme-dianti.zip",
+      "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-dianti.zip",
+      "size": 2108598,
+      "sha256": "6df1789c9c7b0ff22baac1f0278149cdf544cf57370e4ec7d5cc2456ac7881c1"
+    },
+    {
+      "type": "theme",
+      "name": "shengwu",
+      "title": "康软医疗科技模板",
+      "version": "1.0.0",
+      "author": "Modera CMS",
+      "description": "仿康软科技医疗信息化视觉：暖白纸感、深蓝与朱红强调、左文右图首屏、临床/数据/长期陪伴三条价值、三张解决方案卡、产品图文网格、案例大图与指标、日期块新闻卡片。栏目、文章、单页、搜索与多语言读取后台，PC 与手机共用一套模板。",
+      "file": "themes/theme-shengwu.zip",
+      "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-shengwu.zip",
+      "size": 1119482,
+      "sha256": "ceab9058733234b7e516ce8bec9944649e383613e680caf6640555013acaf211"
+    },
+    {
+      "type": "theme",
+      "name": "jiankong",
+      "title": "CoSecu 智能安防模板",
+      "version": "1.0.0",
+      "author": "Modera CMS",
+      "description": "仿 CoSecu 智能安防视觉：深墨蓝与电蓝配色、全屏监控摄像头首屏、Home/Business/Information 三张安全卡、方案图卡、三步交付流程、指标带、引语区与新闻卡片。栏目、文章、单页、搜索与多语言读取后台，PC 与手机共用一套模板，手机端单列与抽屉菜单。",
+      "file": "themes/theme-jiankong.zip",
+      "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-jiankong.zip",
+      "size": 1968631,
+      "sha256": "752729b048754e6600b30dbbf8cf8ff1946a3c6486703c14bfcf6437955d930d"
     }
   ]
 }
