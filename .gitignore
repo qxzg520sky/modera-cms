@@ -29,3 +29,5 @@ Thumbs.db
 /tempqiyecms.rar
 # 发行用模块包：允许追踪 modules/store 下的 zip
 !modules/store/*.zip
+# 在线更新用的核心包
+!/dist/modera-update.zip
