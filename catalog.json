@@ -1,7 +1,7 @@
 {
   "name": "Modera Module Market",
   "version": 1,
-  "updated_at": "2026-11-28 11:24:22",
+  "updated_at": "2026-11-28 11:26:55",
   "base": "https://gitee.com/51iqx/modera-cms/raw/market/",
   "items": [
     {
@@ -215,13 +215,13 @@
       "type": "theme",
       "name": "shuzhai",
       "title": "书斋博客模板",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": "Modera CMS",
       "description": "固定 1180px 版心的左右两栏博客：760px 主栏加 320px 侧栏，桌面端不做任何响应式断点；手机端由 themes/shuzhai/mobile 独立模板重排。封面优先取后台上传封面，其次取正文第一张图，两者都没有时自动分配内置编辑风封面。含首页、分类/搜索、文章详情、单页与中英文。",
       "file": "themes/theme-shuzhai.zip",
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-shuzhai.zip",
       "size": 1807563,
-      "sha256": "29b30ef8a2b452c7071c2cb98b04a763afe77325f5149c05d8c48736348f29bb"
+      "sha256": "33780f277b9d00f141099cd0e516125b78509814c8a33c7ca2fccfb37d7d0b62"
     },
     {
       "type": "theme",
