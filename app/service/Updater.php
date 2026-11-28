@@ -146,6 +146,28 @@ class Updater
             // 没有 version.json 不影响更新，继续用提交号判断
         }
 
+        if ($remoteVersion === null) {
+            try {
+                $api = $mirror === 'github'
+                    ? 'https://api.github.com/repos/' . $repo . '/contents/version.json?ref=' . rawurlencode($branch)
+                    : 'https://gitee.com/api/v5/repos/' . $repo . '/contents/version.json?ref=' . rawurlencode($branch);
+                $j = $this->fetchJson($api, 10, true);
+                if (is_array($j) && !empty($j['content'])) {
+                    $text = base64_decode(str_replace(["\n", "\r"], '', (string) $j['content']));
+                    $json = json_decode((string) $text, true);
+                    if (is_array($json)) {
+                        $remoteVersion = [
+                            'version' => (string) ($json['version'] ?? ''),
+                            'release' => (string) ($json['release'] ?? ''),
+                            'notes'   => (string) ($json['notes'] ?? ''),
+                        ];
+                    }
+                }
+            } catch (Throwable $e) {
+                // raw 域名被拦截时用 API 兜底；都失败则继续用提交号
+            }
+        }
+
         $commit = [];
         if ($mirror === 'github') {
             try {
