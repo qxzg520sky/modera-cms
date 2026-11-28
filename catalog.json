@@ -124,8 +124,8 @@
       "description": "仿钢铁贸易企业站风格：蓝主色顶部热线、蓝色主导航、全屏大图轮播、栏目 tab 产品墙、深色工程案例块、三宫格联系方式、图文新闻区与四栏页脚。响应式，PC 与手机同一套模板；启用/停用即可切换，所有内容取自后台栏目与文章。",
       "file": "themes/theme-gangtie.zip",
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-gangtie.zip",
-      "size": 455198,
-      "sha256": "671432f748947ce26133b7b8e4813cdd2c72859edb18df9476bf71488f81b26e"
+      "size": 455569,
+      "sha256": "adc506c2dd8b00570dbd47a034fd69d4602f6d6c006304a3b433d0cd847d2a59"
     },
     {
       "type": "theme",
@@ -136,8 +136,8 @@
       "description": "仿 temp-gangtie2（Induslio 工业模板）的响应式主题：黑橙配色、顶部黑色联系条 + 白色主导航、全屏轮播、四宫格能力卡、深色技术方案分栏、项目墙、询价表单、深色服务带、新闻卡片、橙色热线条 + 黑色四栏页脚。一套模板同时适配 PC 与手机。",
       "file": "themes/theme-gangtie2.zip",
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-gangtie2.zip",
-      "size": 299383,
-      "sha256": "d86ed45a5973606f0476ea8740b63f731ac83ee869032be62ac2dff68a101cea"
+      "size": 299739,
+      "sha256": "98f4ac2ae17a1b43a23c96724ec34bd859e3b06e058b2471bdc341c297f02498"
     },
     {
       "type": "theme",
@@ -148,8 +148,8 @@
       "description": "仿视维科技企业站版式：白底蓝字导航、云朵大图、框线标题、四卡解决方案、深色服务带、产品横滑与深色页脚，全站响应式，适配企业 CMS 栏目与文章数据。",
       "file": "themes/theme-shiwei.zip",
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-shiwei.zip",
-      "size": 269544,
-      "sha256": "2ee17b75b4f898b34ec81d5ed34466ba90a58e4839b06e1cf1bf37b4d6df21d0"
+      "size": 269902,
+      "sha256": "244734bb733862be61ad1d7278d325e7f11c9ac96169bcda8bb0f49156af6f30"
     },
     {
       "type": "theme",
@@ -160,8 +160,8 @@
       "description": "仿 temp-touzi 金融投资集团模板：白色通栏导航、蓝色全屏首屏、框线标题、业务两页切换、米色集团视角、圆形集团风采、学院轮播、大框线关于集团与深色页脚。全站响应式，栏目、文章、单页与多语言均取自后台。",
       "file": "themes/theme-touzi.zip",
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-touzi.zip",
-      "size": 713295,
-      "sha256": "28450e16a9e4582caf5e7fb9713d260795afa95355475bd3c0292a918fb99eed"
+      "size": 713673,
+      "sha256": "367ee7e13b6db79ab997779ffd9ba2632d722cf6eaa4684e76c70e8471b2c5eb"
     },
     {
       "type": "theme",
@@ -172,8 +172,8 @@
       "description": "仿 temp-weike / temp-huanbao 工业安防企业模板：透明通栏导航、蓝白主色、全屏首屏、圆形产品、解决方案图卡、工程案例、技术支持双栏、新闻横条、关于我们与深蓝联系区。栏目、文章、单页、多语言均取自后台，含商城导航钩子兼容。",
       "file": "themes/theme-weike.zip",
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-weike.zip",
-      "size": 1711652,
-      "sha256": "f7cd201e2c95cfc9123162bbf6e62b3a5291e7765389bdb4f098301f27a42b05"
+      "size": 1712046,
+      "sha256": "5deb5aa9a0d23e5aa900aecce74ba4d47d5a3282c37ee774e51b612e63fc17e4"
     },
     {
       "type": "theme",
@@ -184,8 +184,8 @@
       "description": "自然系企业官网模板：深苔绿与米白配色、衬线大标题、全屏主视觉、产品卡片、深色能力区、资讯卡片、联系页与响应式移动导航。栏目、文章、单页、Logo、电话、备案号均读取后台，并适配商城入口与商城皮肤，适合环保材料、家居建材、设计服务与高端制造企业。",
       "file": "themes/theme-xiangbang.zip",
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-xiangbang.zip",
-      "size": 1409315,
-      "sha256": "0f1f04c005b1e7d8216936c2ab337df7e038444db9768025c43803b4d8f4a921"
+      "size": 1409692,
+      "sha256": "8468bbf81b21351174899d0203b09b0bc08d01f03b82280a460e1af54cbd350c"
     },
     {
       "type": "theme",
@@ -196,8 +196,8 @@
       "description": "仿 temp-xiangjiao / 唯星工业视觉：白色品牌头与深色通栏导航，工业材料首屏、四品类图墙、四列产品卡片、应用方案图卡、深色新闻区、米色关于区与数据条、五栏页脚。栏目、文章、单页、Logo 与联系方式均读取后台，PC 与手机共用一套模板。",
       "file": "themes/theme-weixing.zip",
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-weixing.zip",
-      "size": 4212225,
-      "sha256": "e38ed8059aa33dc7977c7a0f3c4c8bfff515bf1b770dee0da1b2369b01fe36b2"
+      "size": 4212598,
+      "sha256": "13a0c4d565b6f779df7ee457eb260121c0b5d35eaed66f48be52ec1d16994270"
     },
     {
       "type": "theme",
@@ -208,8 +208,8 @@
       "description": "极简高级感技术博客模板：首页、分类文章列表、文章详情与单页；浅色/深色双主题；文章自定义封面优先，没有封面时用 Canvas 按标题与摘要自动生成低饱和度几何封面，每篇版式随标题微调。卡片阴影轻薄、圆角柔和，PC 与手机自适应。",
       "file": "themes/theme-ink.zip",
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-ink.zip",
-      "size": 215142,
-      "sha256": "c390c970171c27030e476b16732841935e1e30f9004f7729e152b98fda26757a"
+      "size": 215543,
+      "sha256": "26fbf977c2f232d41607e5b04f883983418c9db2becefad018a8bb8a02fe2132"
     },
     {
       "type": "theme",
@@ -256,8 +256,8 @@
       "description": "仿 CoSecu 智能安防视觉：深墨蓝与电蓝配色、全屏监控摄像头首屏、Home/Business/Information 三张安全卡、方案图卡、三步交付流程、指标带、引语区与新闻卡片。栏目、文章、单页、搜索与多语言读取后台，PC 与手机共用一套模板，手机端单列与抽屉菜单。",
       "file": "themes/theme-jiankong.zip",
       "url": "https://gitee.com/51iqx/modera-cms/raw/market/themes/theme-jiankong.zip",
-      "size": 1971676,
-      "sha256": "9f37b360eea63f4591221a217b5b051d3c6c1e3a52997a22aa49a10e5fd5a129"
+      "size": 1972035,
+      "sha256": "81a6b731cf3318adf3399ced733dd64d75e4e96fd1af08b7e3e18dcc81fa36aa"
     }
   ]
 }
