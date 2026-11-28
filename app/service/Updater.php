@@ -45,12 +45,17 @@ class Updater
         $this->dir  = $this->root . '/runtime/update';
         $this->ensureDir($this->dir);
 
-        // Windows 版 PHP 常常没有配置 CA；优先 php.ini，其次用内置官方 CA 包
-        $ca = (string) (ini_get('curl.cainfo') ?: ini_get('openssl.cafile'));
-        if ($ca === '' || !is_file($ca)) {
-            $ca = __DIR__ . '/cacert.pem';
+        // Windows 版 PHP 常常没有配置 CA；优先用内置官方 CA 包，其次才用 php.ini 的路径。
+        // 宝塔 open_basedir 通常不允许访问 /etc/ssl/...，不能直接 is_file() 探测系统路径。
+        $iniCa = (string) (ini_get('curl.cainfo') ?: ini_get('openssl.cafile'));
+        $ca    = '';
+        foreach ([__DIR__ . '/cacert.pem', $iniCa] as $candidate) {
+            if ($candidate !== '' && @is_file($candidate) && @is_readable($candidate)) {
+                $ca = $candidate;
+                break;
+            }
         }
-        $this->caFile = is_file($ca) ? $ca : '';
+        $this->caFile = $ca;
     }
 
     public function root(): string
